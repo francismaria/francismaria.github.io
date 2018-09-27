@@ -1,0 +1,142 @@
+    /** IMPORT **/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+    /** FONT **/
+html, body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    height: 110%;
+    background-image: url("../Images/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+    /** MAIN BOARD **/
+
+#main-board{
+    position: relative;
+}
+
+#main-board .profile-img-wrap{
+    position: absolute;
+    display: block;
+    margin: auto;
+    top: 4em;
+    left: 7em;
+    width: 15em;
+    height: 15em;
+}
+
+#main-board .profile-img{
+    max-height: 100%;
+    width: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+#main-board nav{
+    position: absolute;
+    top: 2em;
+    right: 3em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#main-board nav ul{
+    padding-left: 0;
+    padding-right: 1em;
+}
+
+#main-board nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 0 1em 0 1em;
+}
+
+#main-board nav ul li:last-child{
+    border-right: none;
+}
+
+#showcase{
+    position: absolute;
+    top: 9em;
+    width: 100%;
+    height: 28em;
+}
+
+.section-wrap{
+    position: absolute;
+    padding: 15px 15px 0 15px;
+    height: 100%;
+    width: 650px;
+    left: 25em;
+}
+
+    /* HOME SECTION */
+
+#home-wrap{
+    display: block;
+}
+
+    /* ABOUT SECTION */
+
+#about-wrap{
+    display: none;
+}
+
+    /* PROJECTS SECTION */
+
+#projects-wrap{
+    display: none;
+}
+
+.projects-choice-wrap{
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.projects-choice-wrap h3{
+    left: 50%;
+    top: 50%;
+    text-align: center;
+}
+
+    /* SOCIAL SECTION*/
+
+#social-wrap{
+    display: none;
+}
+
+.links-container{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.social-link{
+    height: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+    /* CONTACT SECTION */
+
+#contact-wrap{
+    display: none;
+}
+
+footer{
+    position: absolute;
+    bottom: -15%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
