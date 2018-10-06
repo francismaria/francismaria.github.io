@@ -42,8 +42,8 @@ html, body{
 
 #main-board nav{
     position: absolute;
-    top: 2em;
-    right: 3em;
+    top: 3em;
+    right: 6em;
     display: flex;
     justify-content: flex-end;
 }
@@ -56,11 +56,21 @@ html, body{
 #main-board nav ul li{
     list-style: none;
     display: inline-block;
-    padding: 0 1em 0 1em;
+    padding: 0 1.5em 0 1.5em;
 }
 
 #main-board nav ul li:last-child{
     border-right: none;
+}
+
+#main-board nav ul li a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.20s ease-in-out;
+}
+
+#main-board nav ul li a:hover{
+    color: gray;
 }
 
 #showcase{
@@ -76,41 +86,47 @@ html, body{
     height: 100%;
     width: 650px;
     left: 25em;
+    background-color: gray;
 }
 
     /* HOME SECTION */
 
 #home-wrap{
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
     /* ABOUT SECTION */
 
 #about-wrap{
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
     /* PROJECTS SECTION */
 
 #projects-wrap{
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .projects-choice-wrap{
     flex-basis: 0;
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-.projects-choice-wrap h3{
-    left: 50%;
-    top: 50%;
-    text-align: center;
+.projects-choice-wrap:hover{
+    background-color: gray;
 }
 
     /* SOCIAL SECTION*/
 
 #social-wrap{
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .links-container{
@@ -122,14 +138,21 @@ html, body{
 .social-link{
     height: 100%;
     flex-basis: 0;
-    flex-grow: 1;
+    flex-grow: 1; 
+}
+
+.social-link:hover{
+    background-color: gray;
 }
 
     /* CONTACT SECTION */
 
 #contact-wrap{
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
+
+    /* FOOTER */
 
 footer{
     position: absolute;
