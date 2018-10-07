@@ -65,3 +65,12 @@ document.querySelector("#contact-anchor").addEventListener("click", function(){
 	currentWrapId = "contact-wrap";
 	fillWrap(document.getElementById("contact-wrap"));
 });
+
+document.querySelector(".projects-choice-wrap:first-child").addEventListener("click", function(){
+	console.log("current projects");
+});
+
+document.querySelector(".projects-choice-wrap:last-child").addEventListener("click", function(){
+	console.log("past projects");
+});
+
