@@ -4,14 +4,12 @@ function fadeOutCurrentWrap(){
 
 	let currentWrap = document.querySelector("#"+currentWrapId);
 
-	currentWrap.style.transition = 'all 0.5s linear';
 	currentWrap.style.opacity = "0";
 	currentWrap.style.visibility = 'hidden';
 }
 
 function fillWrap(wrap){
 
-	wrap.style.transition = 'all 0.5s linear';
 	wrap.style.opacity = "1";
 	wrap.style.visibility = "visible";
 }
