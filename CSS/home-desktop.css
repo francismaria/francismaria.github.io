@@ -70,14 +70,13 @@ html, body{
     font-size: 1.05em;
     text-decoration: none;
     color: #202020;
-    transition: color 0.20s ease-in-out;
+    transition: all 0.20s ease-in-out;
 }
 
 #main-board nav ul li a:hover{
-    color: rgb(68, 68, 68);
+    color: rgb(51, 51, 51);
+    font-size: 1.5em;
 }
-
-
 
 #showcase{
     position: absolute;
@@ -110,6 +109,10 @@ html, body{
     opacity: 0;
 }
 
+#about-wrap p:nth-child(1){
+    margin-top: 1.6em;
+}
+
     /* PROJECTS SECTION */
 
 #projects-wrap{
@@ -132,8 +135,10 @@ html, body{
 
 .projects-choice-wrap:hover{
     cursor: pointer;
-    color: white;
-    background-color: #181818;
+    color: rgb(219, 215, 215);
+    background-color: #696868;
+    font-size: 1.3em;
+    opacity: 0.6;
 }
 
     /* SOCIAL SECTION*/
