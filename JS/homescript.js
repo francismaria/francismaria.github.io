@@ -24,11 +24,22 @@ function checkClickedWrap(wrapID){
 	return true;
 } 
 
+function increaseAnchorFont(id){
+
+	if(currentWrapId !== "home-wrap"){
+		let anchorToDecrease = currentWrapId.split("-")[0];
+		document.getElementById(anchorToDecrease+"-anchor").style.fontSize = "initial";
+		console.log(document.getElementById(anchorToDecrease+"-anchor"));
+	}
+	document.getElementById(id).style.fontSize = "1.5em";
+}
+
 document.querySelector("#about-anchor").addEventListener("click", function(){
 	
 	if(!checkClickedWrap("about-anchor"))
 		return;
 
+	increaseAnchorFont("about-anchor");
 	fadeOutCurrentWrap();
 	currentWrapId = "about-wrap";
 	fillWrap(document.getElementById("about-wrap"));
@@ -39,6 +50,7 @@ document.querySelector("#projects-anchor").addEventListener("click", function(){
 	if(!checkClickedWrap("projects-anchor"))
 		return;
 
+	increaseAnchorFont("projects-anchor");
 	fadeOutCurrentWrap();
 	currentWrapId = "projects-wrap";
 	fillWrap(document.getElementById("projects-wrap"));
@@ -49,6 +61,7 @@ document.querySelector("#social-anchor").addEventListener("click", function(){
 	if(!checkClickedWrap("social-anchor"))
 		return;
 	
+	increaseAnchorFont("social-anchor");
 	fadeOutCurrentWrap();
 	currentWrapId = "social-wrap";
 	fillWrap(document.getElementById("social-wrap"));
@@ -59,6 +72,7 @@ document.querySelector("#contact-anchor").addEventListener("click", function(){
 	if(!checkClickedWrap("contact-anchor"))
 		return;
 
+	increaseAnchorFont("contact-anchor");
 	fadeOutCurrentWrap();
 	currentWrapId = "contact-wrap";
 	fillWrap(document.getElementById("contact-wrap"));

@@ -70,7 +70,7 @@ html, body{
     font-size: 1.05em;
     text-decoration: none;
     color: #202020;
-    transition: all 0.20s ease-in-out;
+    transition: all 0.30s ease-in-out;
 }
 
 #main-board nav ul li a:hover{
@@ -162,12 +162,16 @@ html, body{
     text-align: center;
     flex-basis: 0;
     flex-grow: 1; 
-    transition: background-color 350ms linear;
+    border: 5px solid transparent;
+    transition: all 200ms linear;
 }
 
 .social-link:hover{
     cursor: pointer;
-    background-color: #181818;
+    opacity: 0.7;
+    background-color: #5e5d5d;
+    border: 5px solid rgb(77, 77, 77);
+    color: rgb(187, 186, 186);
 }
 
     /* CONTACT SECTION */
