@@ -29,7 +29,6 @@ function increaseAnchorFont(id){
 	if(currentWrapId !== "home-wrap"){
 		let anchorToDecrease = currentWrapId.split("-")[0];
 		document.getElementById(anchorToDecrease+"-anchor").style.fontSize = "initial";
-		console.log(document.getElementById(anchorToDecrease+"-anchor"));
 	}
 	document.getElementById(id).style.fontSize = "1.5em";
 }

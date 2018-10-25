@@ -163,15 +163,15 @@ html, body{
     flex-basis: 0;
     flex-grow: 1; 
     border: 5px solid transparent;
-    transition: all 200ms linear;
+    transition: all 500ms linear;
 }
 
 .social-link:hover{
     cursor: pointer;
-    opacity: 0.7;
-    background-color: #5e5d5d;
+    opacity: 0.6;
+    background-color: #696868;
     border: 5px solid rgb(77, 77, 77);
-    color: rgb(187, 186, 186);
+    color: rgb(219, 215, 215);
 }
 
     /* CONTACT SECTION */
@@ -184,6 +184,7 @@ html, body{
 
 #contact-wrap h2{
     margin-top: 1.5em;
+    margin-bottom: 2em;
 }
 
 #contact-wrap p:nth-child(1){
