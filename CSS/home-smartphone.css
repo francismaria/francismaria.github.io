@@ -31,15 +31,6 @@ nav{
     margin: 50px 50px 30% 50px;
 }
 
-#showcase:before{
-    display: block;
-    content: "";
-    background-color: #2c2d2d;
-    opacity: 0.9;
-    height: 20px;
-    width: 100%;
-}
-
 nav ul{
     padding: 0;
 }
@@ -59,6 +50,15 @@ a[id="about-anchor"]:target{
     transform: translateY( -100px );
 }
 
+#showcase:before{
+    display: block;
+    content: "";
+    background-color: #2c2d2d;
+    opacity: 0.9;
+    height: 20px;
+    width: 100%;
+}
+
 #showcase{
     height: 500px;
 }
@@ -73,6 +73,11 @@ a[id="about-anchor"]:target{
     transition: all 0.5s linear;
     position: absolute;
     height: 100%;
+}
+
+#home-wrap{
+    margin-top: -25%;
+    text-align: center;
 }
 
 #about-wrap{
