@@ -40,6 +40,21 @@ nav ul li a{
     color: inherit;
 }
 
+#showcase{
+    height: 500px;
+}
+
+#showcase:after{
+    content: "";
+    display: block;
+}
+
+.section-wrap{
+    background-color: transparent;
+    transition: all 0.5s linear;
+    position: absolute;
+}
+
 #about-wrap{
     opacity: 0;
     visibility: hidden;
@@ -58,4 +73,12 @@ nav ul li a{
 #contact-wrap{
     opacity: 0;
     visibility: hidden;
+}
+
+footer{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
