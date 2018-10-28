@@ -4,6 +4,11 @@
 html, body{
     font-family: 'Raleway', sans-serif;
     text-align: center;
+    background-image: url("../Images/wallpaper.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .profile-img-wrap{
@@ -28,4 +33,29 @@ nav ul{
 
 nav ul li{
     list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#about-wrap{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#projects-wrap{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#social-wrap{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#contact-wrap{
+    opacity: 0;
+    visibility: hidden;
 }
