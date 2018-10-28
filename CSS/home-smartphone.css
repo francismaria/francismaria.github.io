@@ -3,4 +3,29 @@
 
 html, body{
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+.profile-img-wrap{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.profile-img{
+    max-height: 100%;
+    width: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #2c2d2d;
+    border-width: 5px;
+}
+
+nav ul{
+    padding: 0;
+}
+
+nav ul li{
+    list-style: none;
 }
