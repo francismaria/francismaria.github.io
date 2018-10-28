@@ -1,11 +1,15 @@
 let currentWrapId = "home-wrap";
 
+function hideWrap(wrap){
+	wrap.style.opacity = "0";
+	wrap.style.visibility = 'hidden';
+}
+
 function fadeOutCurrentWrap(){
 
 	let currentWrap = document.querySelector("#"+currentWrapId);
 
-	currentWrap.style.opacity = "0";
-	currentWrap.style.visibility = 'hidden';
+	hideWrap(currentWrap);
 }
 
 function fillWrap(wrap){
@@ -32,6 +36,10 @@ function increaseAnchorFont(id){
 	}
 	document.getElementById(id).style.fontSize = "1.5em";
 }
+
+document.querySelector('.social-link').addEventListener('click', function(){
+	console.log("social-link clicked");
+});
 
 document.querySelector("#about-anchor").addEventListener("click", function(){
 	
@@ -78,10 +86,12 @@ document.querySelector("#contact-anchor").addEventListener("click", function(){
 });
 
 document.querySelector(".projects-choice-wrap:first-child").addEventListener("click", function(){
-	console.log("current projects");
+	hideWrap(this);
+	hideWrap(document.querySelector('.projects-choice-wrap:last-child'));
 });
 
 document.querySelector(".projects-choice-wrap:last-child").addEventListener("click", function(){
-	console.log("past projects");
+	hideWtrap(this);
+	hideWrap('.projects-choice-wrap:first-child');
 });
 

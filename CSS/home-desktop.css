@@ -14,15 +14,10 @@ html, body{
     background-size: cover;
     opacity: 0.9;
     color: #2c2d2d;
-}
-
-    /** MAIN BOARD **/
-
-#main-board{
     position: relative;
 }
 
-#main-board .profile-img-wrap{
+.profile-img-wrap{
     position: absolute;
     display: block;
     margin: auto;
@@ -32,7 +27,7 @@ html, body{
     height: 15em;
 }
 
-#main-board .profile-img{
+.profile-img{
     max-height: 100%;
     width: 100%;
     -webkit-border-radius: 50%;
@@ -43,7 +38,7 @@ html, body{
     border-width: 5px;
 }
 
-#main-board nav{
+nav{
     position: absolute;
     top: 3em;
     right: 6em;
@@ -51,29 +46,29 @@ html, body{
     justify-content: flex-end;
 }
 
-#main-board nav ul{
+nav ul{
     padding-left: 0;
     padding-right: 1em;
 }
 
-#main-board nav ul li{
+nav ul li{
     list-style: none;
     display: inline-block;
     padding: 0 1.5em 0 1.5em;
 }
 
-#main-board nav ul li:last-child{
+nav ul li:last-child{
     border-right: none;
 }
 
-#main-board nav ul li a{
+nav ul li a{
     font-size: 1.05em;
     text-decoration: none;
     color: #202020;
     transition: all 0.30s ease-in-out;
 }
 
-#main-board nav ul li a:hover{
+nav ul li a:hover{
     color: rgb(51, 51, 51);
     font-size: 1.5em;
 }
