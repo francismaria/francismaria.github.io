@@ -97,9 +97,9 @@ document.querySelector(".projects-choice-wrap:last-child").addEventListener("cli
 
 if(window.innerWidth < 500){
     function smoothDownScroll(elemHeight, actualHeight){
-
-        let currentHeight = actualHeight - 20, timer;
-
+        let currentHeight = actualHeight, timer;
+		elemHeight -= 20;
+		
         timer = setInterval(function(){
             if(currentHeight >= elemHeight){
                 clearInterval(timer);
