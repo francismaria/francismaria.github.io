@@ -97,7 +97,7 @@ document.querySelector(".projects-choice-wrap:last-child").addEventListener("cli
 
 function smoothDownScroll(elemHeight, actualHeight){
 
-    let currentHeight = actualHeight, timer;
+    let currentHeight = actualHeight - 10, timer;
 
     timer = setInterval(function(){
         if(currentHeight >= elemHeight){
