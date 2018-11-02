@@ -106,7 +106,6 @@ if(window.innerWidth < 500){
             } else {
                 currentHeight += 5;
                 window.scrollTo(0, currentHeight);
-                console.log(currentHeight);
             }
         }, 10);
     }
