@@ -95,6 +95,8 @@ document.querySelector(".projects-choice-wrap:last-child").addEventListener("cli
 	hideWrap('.projects-choice-wrap:first-child');
 });
 
+			/* SMARTPHONE VERSION */
+			
 if(window.innerWidth < 500){
     function smoothDownScroll(elemHeight, actualHeight){
         let currentHeight = actualHeight, timer;
@@ -107,7 +109,7 @@ if(window.innerWidth < 500){
                 currentHeight += 5;
                 window.scrollTo(0, currentHeight);
             }
-        }, 10);
+        }, 5);
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
