@@ -97,6 +97,14 @@ nav ul li a{
     opacity: 0;
     visibility: hidden;
     width: 100%;
+    position: absolute;
+}
+
+#projects-wrap.links-container{
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    position: static;
 }
 
 .projects-choice-wrap{
@@ -109,8 +117,13 @@ nav ul li a{
     height: 50%;
 }
 
-.links-container{
-    height: 100%;
+.projects-content-wrap{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.projects-choice-wrap:hover{
+    cursor: pointer;
 }
 
     /* ----- SOCIAL SECTION ----- */

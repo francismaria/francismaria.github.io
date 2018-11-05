@@ -136,6 +136,11 @@ nav ul li a:hover{
     opacity: 0.6;
 }
 
+.projects-content-wrap{
+    visibility: hidden;
+    opacity: 0;
+}
+
     /* SOCIAL SECTION*/
 
 #social-wrap{

@@ -85,14 +85,20 @@ document.querySelector("#contact-anchor").addEventListener("click", function(){
 	fillWrap(document.getElementById("contact-wrap"));
 });
 
+function hideProjectsChoice(divsToHide, divToShow){
+	hideWrap(divsToHide[0]);
+	hideWrap(divsToHide[1]);
+	fillWrap(divToShow);
+}
+
 document.querySelector(".projects-choice-wrap:first-child").addEventListener("click", function(){
-	hideWrap(this);
-	hideWrap(document.querySelector('.projects-choice-wrap:last-child'));
+	hideProjectsChoice(document.getElementsByClassName('projects-choice-wrap'),
+		document.getElementById("current-projects-wrap"));
 });
 
 document.querySelector(".projects-choice-wrap:last-child").addEventListener("click", function(){
-	hideWtrap(this);
-	hideWrap('.projects-choice-wrap:first-child');
+	hideProjectsChoice(document.getElementsByClassName('projects-choice-wrap'),
+		document.getElementById("past-projects-wrap"));
 });
 
 			/* SMARTPHONE VERSION */
@@ -118,5 +124,7 @@ if(window.innerWidth < 500){
 
             smoothDownScroll((document.querySelector('.section-wrap')).clientHeight, this.clientHeight);
         })
-    });
+	});
+	
+
 }
