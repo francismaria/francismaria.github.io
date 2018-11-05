@@ -148,6 +148,25 @@ nav ul li a{
     visibility: hidden;
 }
 
+#contact-wrap h2{
+    margin: 1em auto;
+    display: inline-block;
+}
+
+#contact-wrap p:nth-child(3){
+    font-size: 0.8em;
+}
+
+.mail-wrap{
+    margin: 1em auto;
+    display: inline-block;
+}
+
+.mail-wrap a{
+    text-decoration: underline;
+    color: #2c2d2d;
+}
+
     /* ----- FOOTER ----- */
 
 footer{
