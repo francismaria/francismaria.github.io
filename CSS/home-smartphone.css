@@ -9,6 +9,8 @@ html, body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
     /* ----- PROFILE IMAGE SECTION ----- */
@@ -74,6 +76,7 @@ nav ul li a{
     background-color: transparent;
     transition: all 0.5s linear;
     position: absolute;
+    width: 390px;
     height: 100%;
 }
 
@@ -117,7 +120,12 @@ nav ul li a{
     height: 50%;
 }
 
-.projects-content-wrap{
+#current-projects-wrap{
+    visibility: hidden;
+    opacity: 0;
+}
+
+#past-projects-wrap{
     visibility: hidden;
     opacity: 0;
 }
