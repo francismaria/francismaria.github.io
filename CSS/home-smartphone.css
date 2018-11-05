@@ -76,7 +76,7 @@ nav ul li a{
     background-color: transparent;
     transition: all 0.5s linear;
     position: absolute;
-    width: auto;
+    width: 95%;
     height: 100%;
 }
 
