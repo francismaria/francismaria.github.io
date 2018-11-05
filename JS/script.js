@@ -122,7 +122,7 @@ if(window.innerWidth < 500){
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
 
-            smoothDownScroll((document.querySelector('.section-wrap')).clientHeight, this.clientHeight);
+			smoothDownScroll((document.querySelector('.section-wrap')).clientHeight, window.pageYOffset);
         })
 	});
 	
