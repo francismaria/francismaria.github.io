@@ -121,7 +121,6 @@ if(window.innerWidth < 500){
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-
 			smoothDownScroll((document.querySelector('.section-wrap')).clientHeight, window.pageYOffset);
         })
 	});
