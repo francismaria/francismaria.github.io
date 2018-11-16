@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300|Montserrat:300i');
+
+html, body{
+    margin: auto 0;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* ----- MAIN BOARD -----*/
+#main-board{
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    /*background: url('../images/background-pic.jpg') no-repeat top center;
+    background-size: cover;*/
+}
+
+.profile-img-wrap{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+}
+
+.info-nav-wrap{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 1em auto;
+}
+
+#main-board h3{
+    margin: 3em auto;
+    display: block;
+}
+
+#main-board h2{
+    margin: 1em auto 2em auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+#main-board nav{
+    margin-bottom: 3em;
+}
+
+#main-board nav ul{
+    padding: 0;
+}
+
+#main-board nav ul li{
+    list-style: none;
+    margin: 1.2em 2em;
+    display: inline-block;
+}
+
+#main-board a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
+/* ABOUT ME*/
+.descrp-container{
+    margin: auto 3.5em;
+    font-size: 1.5em;
+}
+
+.hobbie-container{
+    height: 30em;
+    margin: 2em auto;
+}
+
+.hobbie-container .hobbie-descrp-card{
+    font-size: 1.5em;
+    position: absolute;
+    width: 33em;
+    height: 18em;
+    background-color: orange;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+}
+
+.left-card{
+    margin: 1em 2em 1em 3em;
+}
+
+.right-card{
+    right: 0;
+    margin: 1em 3em 1em 2em;
+}
