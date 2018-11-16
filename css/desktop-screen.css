@@ -89,3 +89,19 @@ html, body{
     right: 0;
     margin: 1em 3em 1em 2em;
 }
+
+/* PROJECT BOARD */
+.project-container{
+    display: flex;
+    justify-content: center;
+    height: 30em;
+    margin: 1em auto;
+}
+
+.project-descrp-card{
+    margin: 2em auto;
+    width: 50em;
+    background-color: blue;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+}
