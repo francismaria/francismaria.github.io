@@ -95,17 +95,27 @@ html, body{
     z-index: 1;
 }
 
-.hobbie-slider{
+.hobbie-slider-left{
     background-color: #BDD4E7;
-}
-
-.left-slider{
+    display: flex;
+    flex-direction: row;
     margin: 1em 2em 1em 8em;
 }
 
-.right-slider{
+.hobbie-slider-right{
+    background-color: #BDD4E7;
+    display: flex;
+    flex-direction: row-reverse;    
     right: 0;
     margin: 1em 8em 1em 2em;
+}
+
+.hobbie-descrp{
+    flex: 1;
+}
+
+.slide-btn-container{
+    align-self: center;
 }
 
 /* PROJECT BOARD */
