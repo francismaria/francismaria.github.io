@@ -19,13 +19,26 @@ document.querySelectorAll('.slide-down-btn a[href^="#"], #main-board nav a[href^
     })
 });
 
-document.querySelectorAll('.slide-btn-container.right-img-slider').forEach(slider => {
-    slider.addEventListener('click', function(e){
+//    instead of having a button what about a mouse over in each triggers the margin transition???
+
+document.querySelectorAll('.hobbie-card.left-card').forEach(card => {
+    card.addEventListener('mouseover', function(e){
         e.preventDefault();
-        let slideContainer = this.parentNode;
-        slideContainer.style.marginRight = '33em';
+        let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-left');
+        slider.style.marginLeft = '33em';
     })
 })
+
+document.querySelectorAll('.hobbie-card.left-card').forEach(card => {
+    card.addEventListener('mouseleave', function(e){
+        e.preventDefault();
+        let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-left');
+        slider.style.marginLeft = '8em';
+    })
+})
+
+/*
+//sliders-buttons
 
 document.querySelectorAll('.slide-btn-container.left-img-slider').forEach(slider => {
     slider.addEventListener('click', function(e){
@@ -36,4 +49,12 @@ document.querySelectorAll('.slide-btn-container.left-img-slider').forEach(slider
     })
 })
 
+document.querySelectorAll('.slide-btn-container.right-img-slider').forEach(slider => {
+    slider.addEventListener('click', function(e){
+        e.preventDefault();
+        let slideContainer = this.parentNode;
+        slideContainer.style.marginRight = '33em';
+    })
+})
+*/
 
