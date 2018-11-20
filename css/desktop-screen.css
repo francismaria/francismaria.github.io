@@ -73,101 +73,116 @@ html, body{
     margin: 2em auto;
 }
 
-.hobbie-card{
-    font-size: 1.5em;
-    position: absolute;
-    width: 33em;
-    height: 18em;
-    border-radius: 3px;
-    box-shadow: 0 5px 5px 0 #E9EDDE;
-}
+    .hobbie-card{
+        font-size: 1.5em;
+        position: absolute;
+        width: 33em;
+        height: 18em;
+        border-radius: 3px;
+        box-shadow: 0 5px 5px 0 #E9EDDE;
+    }
 
-.left-card{
-    background-color: #007991;
-    margin: 1em 2em 1em 3em;
-    z-index: 1;
-}
+    .left-card{
+        background-color: #007991;
+        margin: 1em 2em 1em 3em;
+        z-index: 1;
+    }
 
-.right-card{
-    background-color: #007991;
-    right: 0;
-    margin: 1em 3em 1em 2em;
-    z-index: 1;
-}
+    .right-card{
+        background-color: #007991;
+        right: 0;
+        margin: 1em 3em 1em 2em;
+        z-index: 1;
+    }
 
-.hobbie-slider-left{
-    background-color: #BDD4E7;
-    display: flex;
-    flex-direction: row;
-    margin: 1em 2em 1em 8em;
-    transition: all .4s ease-out;
-}
+    .hobbie-slider-left{
+        background-color: #BDD4E7;
+        display: flex;
+        flex-direction: row;
+        margin: 1em 2em 1em 8em;
+        transition: all .4s ease-out;
+    }
 
-.hobbie-slider-left:hover{
-    cursor: pointer;
-    background-color: #A1CFF4;
-}
+    .hobbie-slider-left:hover{
+        cursor: pointer;
+        background-color: #A1CFF4;
+    }
 
-.hobbie-slider-right{
-    background-color: #BDD4E7;
-    display: flex;
-    flex-direction: row-reverse;    
-    right: 0;
-    margin: 1em 8em 1em 2em;
-    transition: all .5s ease-out;
-}
+    .hobbie-slider-right{
+        background-color: #BDD4E7;
+        display: flex;
+        flex-direction: row-reverse;    
+        right: 0;
+        margin: 1em 8em 1em 2em;
+        transition: all .5s ease-out;
+    }
 
-.hobbie-slider-right:hover{
-    cursor: pointer;
-    background-color: #A1CFF4;
-}
+    .hobbie-slider-right:hover{
+        cursor: pointer;
+        background-color: #A1CFF4;
+    }
 
-.hobbie-slider-right:hover{
-    cursor: pointer;
-}
+    .hobbie-slider-right:hover{
+        cursor: pointer;
+    }
 
-.hobbie-descrp{
-    flex: 1;
-}
+    .hobbie-descrp{
+        flex: 1;
+    }
 
-.slide-btn-container{
-    width: 15%;
-    max-height: 100%;
-    align-items: center;
-}
+    .slide-btn-container{
+        width: 15%;
+        max-height: 100%;
+        align-items: center;
+    }
 
-.left-img-slider img{
-    position: relative;
-    top: 36%;
-    max-width: 100%;
-    transform: rotate(-90deg);
-}
+    .left-img-slider img{
+        position: relative;
+        top: 36%;
+        max-width: 100%;
+        transform: rotate(-90deg);
+    }
 
-.right-img-slider img{
-    position: relative;
-    top: 36%;
-    max-width: 100%;
-    transform: rotate(90deg);
-}
+    .right-img-slider img{
+        position: relative;
+        top: 36%;
+        max-width: 100%;
+        transform: rotate(90deg);
+    }
 
 /* PROJECT BOARD */
 #my-projects-board{
     background-color: white;
 }
-.project-container{
-    display: flex;
-    justify-content: center;
-    height: 30em;
-    margin: 1em auto;
+    .project-container{
+        display: flex;
+        justify-content: center;
+        height: 30em;
+        margin: 1em auto;
 }
 
-.project-descrp-card{
-    margin: 2em auto;
-    width: 40em;
-    background-color: blue;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+    .project-descrp-card{
+        position: relative;
+        margin: 2em auto;
+        width: 40em;
+        background-color: blue;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
 }
+
+        .show-more-btn{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: orange;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .show-more-btn:hover{
+            cursor: pointer;
+            background-color: darkgoldenrod;
+        }
 
 /* SOCIAL BOARD */
 .social-cards-container{

@@ -19,6 +19,8 @@ document.querySelectorAll('.slide-down-btn a[href^="#"], #main-board nav a[href^
     })
 });
 
+            /* HOBBIES SECTION  */
+
 // MOUSE OVER
 
 document.querySelectorAll('.hobbie-card.left-card').forEach(card => {
@@ -52,6 +54,16 @@ document.querySelectorAll('.hobbie-card.right-card').forEach(card => {
         e.preventDefault();
         let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-right');
         slider.style.marginRight = '8em';
+    })
+})
+
+        /* PROJECTS SECTION */
+
+document.querySelectorAll('.show-more-btn').forEach(card => {
+    card.addEventListener('click', function(e){
+        e.preventDefault();
+        let container = this.parentNode;
+        console.log(container)
     })
 })
 
