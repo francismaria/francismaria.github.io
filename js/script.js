@@ -27,7 +27,7 @@ document.querySelectorAll('.hobbie-card.left-card').forEach(card => {
     card.addEventListener('mouseover', function(e){
         e.preventDefault();
         let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-left');
-        slider.style.marginLeft = '33em';
+        slider.style.marginLeft = '50%';
     })
 })
 
@@ -35,7 +35,7 @@ document.querySelectorAll('.hobbie-card.right-card').forEach(card => {
     card.addEventListener('mouseover', function(e){
         e.preventDefault();
         let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-right');
-        slider.style.marginRight = '33em';
+        slider.style.marginRight = '50%';
     })
 })
 
@@ -45,7 +45,7 @@ document.querySelectorAll('.hobbie-card.left-card').forEach(card => {
     card.addEventListener('mouseleave', function(e){
         e.preventDefault();
         let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-left');
-        slider.style.marginLeft = '8em';
+        slider.style.marginLeft = '12%';
     })
 })
 
@@ -53,7 +53,7 @@ document.querySelectorAll('.hobbie-card.right-card').forEach(card => {
     card.addEventListener('mouseleave', function(e){
         e.preventDefault();
         let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-right');
-        slider.style.marginRight = '8em';
+        slider.style.marginRight = '12%';
     })
 })
 

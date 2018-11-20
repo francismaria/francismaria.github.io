@@ -80,6 +80,7 @@ html, body{
         height: 18em;
         border-radius: 3px;
         box-shadow: 0 5px 5px 0 #E9EDDE;
+        cursor: pointer;
     }
 
         .left-card{
@@ -99,7 +100,7 @@ html, body{
         background-color: #BDD4E7;
         display: flex;
         flex-direction: row;
-        margin: 1em 2em 1em 8em;
+        margin: 1em 2em 1em 12%;
         transition: all .4s ease-out;
     }
 
@@ -113,7 +114,7 @@ html, body{
         display: flex;
         flex-direction: row-reverse;    
         right: 0;
-        margin: 1em 8em 1em 2em;
+        margin: 1em 12% 1em 2em;
         transition: all .5s ease-out;
     }
 
