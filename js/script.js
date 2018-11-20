@@ -107,6 +107,18 @@ function increaseContainer(container) {
             increaseContainer(container)
 }
 */
+
+function showModal(modal) {
+    modal.style.visibility = 'visible';
+    modal.style.opacity = '1';
+    modal.style.transition = 'visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s'
+}
+
+function hideModal(modal) {
+    modal.style.visibility = 'hidden';
+    modal.style.opacity = '0';
+}
+
 document.querySelectorAll('.show-more-btn').forEach(card => {
     card.addEventListener('click', function(e){
         e.preventDefault();
@@ -115,10 +127,14 @@ document.querySelectorAll('.show-more-btn').forEach(card => {
        
         window.onclick = function(e) {
             if (e.target == modal) {
-                modal.style.display = "none";
+                hideModal(modal)
             }
         }
-        modal.style.display = 'block'
+
+        if(modal.style.visibility == 'visible')
+            hideModal(modal)
+        else
+            showModal(modal)
     })
 })
 
