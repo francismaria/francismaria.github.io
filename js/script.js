@@ -57,16 +57,6 @@ document.querySelectorAll('.hobbie-card.right-card').forEach(card => {
     })
 })
 
-        /* PROJECTS SECTION */
-
-document.querySelectorAll('.show-more-btn').forEach(card => {
-    card.addEventListener('click', function(e){
-        e.preventDefault();
-        let container = this.parentNode;
-        console.log(container)
-    })
-})
-
 /*
 //sliders-buttons
 
@@ -87,4 +77,15 @@ document.querySelectorAll('.slide-btn-container.right-img-slider').forEach(slide
     })
 })
 */
+
+        /* PROJECTS SECTION */
+
+document.querySelectorAll('.show-more-btn').forEach(card => {
+    card.addEventListener('click', function(e){
+        e.preventDefault();
+        let container = this.parentNode;
+        container.style.height = '80%';
+        container.style.width = '90%';
+    })
+})
 
