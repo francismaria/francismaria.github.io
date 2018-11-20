@@ -112,16 +112,14 @@ document.querySelectorAll('.show-more-btn').forEach(card => {
         e.preventDefault();
 
         let modal = this.parentNode.parentNode.querySelector('.project-modal');
-        console.log(modal)
+       
+        window.onclick = function(e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        }
         modal.style.display = 'block'
-        
     })
 })
 
-window.onclick = function(e) {
-    let modal = document.getElementsByClassName('project-modal')[0];
-    if (e.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
