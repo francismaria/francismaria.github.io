@@ -157,16 +157,17 @@ html, body{
         justify-content: center;
         height: 30em;
         margin: 1em auto;
-        transition: all 1s ease-out;
 }
 
     .project-descrp-card{
         position: relative;
         margin: 2em auto;
-        width: 40em;
+        width: 50%;
         background-color: blue;
         border-radius: 5px;
         box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+        transition: all 1s ease-out;
+        z-index: 0;
 }
 
         .show-more-btn{
@@ -183,6 +184,30 @@ html, body{
             background-color: darkgoldenrod;
         }
 
+        /* PROJECTS MODAL */
+
+        .project-modal{
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            color: black;
+            width: 80%; /* Could be more or less, depending on screen size */
+            z-index: 2;
+        }
 /* SOCIAL BOARD */
 .social-cards-container{
     display: flex;

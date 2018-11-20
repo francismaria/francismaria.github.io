@@ -79,13 +79,49 @@ document.querySelectorAll('.slide-btn-container.right-img-slider').forEach(slide
 */
 
         /* PROJECTS SECTION */
+/*
+function decreaseContainer(container) {
+    document.body.style.backgroundColor = 'transparent';
+    document.body.style.opacity = '1'
+    document.body.style.zIndex = '0'
 
+    container.style.width = '50%';
+    container.style.zIndex = 0;
+    container.style.opacity = '1'
+}
+
+function increaseContainer(container) {
+    document.body.style.backgroundColor = 'black';
+    document.body.style.opacity = '0.5'
+    document.body.style.zIndex = '0'
+
+    container.style.height = '80%';
+    container.style.width = '90%';
+    container.style.zIndex = 4;
+    container.style.opacity = '1'\
+    \\\\\\
+    /*
+        if(container.style.height === '80%')
+            decreaseContainer(container)
+        else
+            increaseContainer(container)
+}
+*/
 document.querySelectorAll('.show-more-btn').forEach(card => {
     card.addEventListener('click', function(e){
         e.preventDefault();
-        let container = this.parentNode;
-        container.style.height = '80%';
-        container.style.width = '90%';
+
+        let modal = this.parentNode.parentNode.querySelector('.project-modal');
+        console.log(modal)
+        modal.style.display = 'block'
+        
     })
 })
+
+window.onclick = function(e) {
+    let modal = document.getElementsByClassName('project-modal')[0];
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
