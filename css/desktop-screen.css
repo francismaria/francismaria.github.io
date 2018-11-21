@@ -214,13 +214,29 @@ html, body{
 
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
+            margin: 3% auto;
             padding: 20px;
             border: 1px solid #888;
             color: black;
-            width: 80%; /* Could be more or less, depending on screen size */
+            width: 80vw; 
+            height: 80vh;
             z-index: 2;
         }
+
+        .exit-modal-btn{
+            position: absolute;
+            right: 0;
+            margin-top: 3%;
+            margin-right: 9%;
+            width: 5%;
+            height: 7%;
+            background-color: red;
+        }
+
+        .exit-modal-btn:hover{
+            cursor: pointer;
+        }
+
 /* SOCIAL BOARD */
 .social-cards-container{
     display: flex;
