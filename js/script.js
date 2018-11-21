@@ -85,33 +85,42 @@ function decreaseContainer(container) {
     document.body.style.opacity = '1'
     document.body.style.zIndex = '0'
 
+    container.parentNode.style.height = '50%';
+
     container.style.width = '50%';
     container.style.zIndex = 0;
     container.style.opacity = '1'
 }
 
 function increaseContainer(container) {
-    document.body.style.backgroundColor = 'black';
+    /*document.body.style.backgroundColor = 'black';
     document.body.style.opacity = '0.5'
     document.body.style.zIndex = '0'
 
     container.style.height = '80%';
     container.style.width = '90%';
     container.style.zIndex = 4;
-    container.style.opacity = '1'\
-    \\\\\\
-    /*
-        if(container.style.height === '80%')
-            decreaseContainer(container)
-        else
-            increaseContainer(container)
+    container.style.opacity = '1'
 }
-*/
+
+document.querySelectorAll('.show-more-btn').forEach(card => {
+    card.addEventListener('click', function(e){
+        e.preventDefault();
+    
+    let container = this.parentNode;
+    
+    if(container.style.height === '80%')
+        decreaseContainer(container)
+    else
+        increaseContainer(container)
+    })
+})*/
+
 
 function showModal(modal) {
     modal.style.visibility = 'visible';
     modal.style.opacity = '1';
-    modal.style.transition = 'visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s'
+    modal.style.transition = 'visibility 0.4s linear 0s, opacity 0.25s 0s, transform 0.25s'
 }
 
 function hideModal(modal) {
