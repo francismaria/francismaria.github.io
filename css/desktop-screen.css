@@ -221,20 +221,26 @@ html, body{
             width: 80vw; 
             height: 80vh;
             z-index: 2;
+            border-radius: 4px;
         }
 
         .exit-modal-btn{
             position: absolute;
             right: 0;
-            margin-top: 3%;
-            margin-right: 9%;
+            margin-top: 4%;
+            margin-right: 10%;
             width: 5%;
-            height: 7%;
-            background-color: red;
+            height: 10%;
         }
 
         .exit-modal-btn:hover{
             cursor: pointer;
+        }
+
+        .exit-btn-img{
+            max-width: 100%;
+            height: auto;
+
         }
 
 /* SOCIAL BOARD */
