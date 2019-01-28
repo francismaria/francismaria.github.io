@@ -12,6 +12,30 @@ function smoothDownScroll(elemHeight, actualHeight){
     }, 2);
 }
 
+function hideGridElements(activeElement){
+    let elemsToHide = [];
+    
+    switch(activeElement){
+        case 'about':
+            elemsToHide = document.querySelectorAll('#projects-container, #social-container, #contact-container');
+            break;
+        case 'projects':
+            elemsToHide = document.querySelectorAll('#about-container, #social-container, #contact-container');
+            break;
+        case 'social':
+            elemsToHide = document.querySelectorAll('#about-container, #projects-container, #contact-container');
+            break;
+        case 'contact':
+            elemsToHide = document.querySelectorAll('#about-container, #projects-container, #social-container');
+            break;
+        default: 
+            console.log("Not a valid element to hide.");
+            break;
+    }
+    
+    console.log(elemsToHide[0]);
+}
+
 document.querySelector('#about-container').addEventListener('click', function(e){
     e.preventDefault();
     let elem = document.querySelector('#about-container');
@@ -32,6 +56,7 @@ document.querySelector('#about-container').addEventListener('click', function(e)
         }
     }, 5);
 
+    hideGridElements("about");
 });
 
 document.querySelector('#projects-container').addEventListener('click', function(e){
