@@ -11,6 +11,57 @@ function smoothDownScroll(elemHeight, actualHeight){
         }
     }, 2);
 }
+
+document.querySelector('#about-container').addEventListener('click', function(e){
+    e.preventDefault();
+    let elem = document.querySelector('#about-container');
+    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
+    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
+    let maxHeight = elem.parentElement.offsetHeight - elem.offsetHeight;
+    
+    timer = setInterval(function(){
+        if(widthCounter >= maxWidth){
+            if(heightCounter < maxHeight){
+                heightCounter += 10;
+                elem.style.bottom = heightCounter + 'px';
+            } else
+                clearInterval(timer);
+        } else {
+            widthCounter += 10;
+            elem.style.right = widthCounter + 'px';
+        }
+    }, 5);
+
+});
+
+document.querySelector('#projects-container').addEventListener('click', function(e){
+    e.preventDefault();
+
+    timer = setInterval(function(){
+
+    });
+    
+});
+
+document.querySelector('#social-container').addEventListener('click', function(e){
+    e.preventDefault();
+
+    timer = setInterval(function(){
+
+    });
+    
+});
+
+document.querySelector('#contact-container').addEventListener('click', function(e){
+    e.preventDefault();
+
+    timer = setInterval(function(){
+
+    });
+    
+});
+
+
 /*
 document.querySelectorAll('.slide-down-btn a[href^="#"], #main-board nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
