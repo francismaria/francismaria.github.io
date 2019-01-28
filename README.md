@@ -1,3 +1,3 @@
 # francismaria.github.io
 This is my presentation website.
-Updated readme file.
+All made with vanilla JS, HTML and CSS.
