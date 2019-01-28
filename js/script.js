@@ -150,7 +150,6 @@ document.querySelectorAll('.show-more-btn').forEach(card => {
 document.querySelectorAll('.exit-modal-btn').forEach(exitBtn => {
     exitBtn.addEventListener('click', function(e){
         e.preventDefault();
-        console.log('clicked okok')
         hideModal(this.parentNode);
     })
 })
