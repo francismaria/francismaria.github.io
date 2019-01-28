@@ -12,6 +12,13 @@ function smoothDownScroll(elemHeight, actualHeight){
     }, 2);
 }
 
+/**
+ * This function hides all the elements that are to be hidden upon a 
+ * click on one of the "squares" to be animated.
+ * It receives the name of the element that was clicked in order to
+ * get all of the other elements for they can be hidden.
+ * @param {string} activeElement 
+ */
 function hideGridElements(activeElement){
     let elemsToHide = [];
     
