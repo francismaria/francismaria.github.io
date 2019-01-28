@@ -11,7 +11,7 @@ function smoothDownScroll(elemHeight, actualHeight){
         }
     }, 2);
 }
-
+/*
 document.querySelectorAll('.slide-down-btn a[href^="#"], #main-board nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -19,7 +19,7 @@ document.querySelectorAll('.slide-down-btn a[href^="#"], #main-board nav a[href^
     })
 });
 
-            /* HOBBIES SECTION  */
+            /* HOBBIES SECTION  
 
 // MOUSE OVER
 
@@ -57,7 +57,7 @@ document.querySelectorAll('.hobbie-card.right-card').forEach(card => {
     })
 })
 
-/*
+
 //sliders-buttons
 
 document.querySelectorAll('.slide-btn-container.left-img-slider').forEach(slider => {
