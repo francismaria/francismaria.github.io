@@ -62,7 +62,31 @@ html, body{
     color: white;
 }
 
-/* ABOUT ME*/
+#interaction-board{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 2%;
+    grid-column-gap: 1%;
+}
+
+.grid-elem-container{
+    position: relative;
+}
+
+.grid-elem-left{
+    position: absolute;
+    right: 0;
+    background-color: white;
+}
+
+.grid-elem-right{
+    background-color: white;
+    position: absolute;
+}
+
+/*
+/* ABOUT ME
 .descrp-container{
     margin: auto 3.5em;
     font-size: 1.3em;
@@ -147,7 +171,7 @@ html, body{
             transform: rotate(90deg);
         }
 
-    /* PROJECT BOARD */
+    /* PROJECT BOARD 
 
 #my-projects-board{
     color: black;
@@ -194,7 +218,7 @@ html, body{
             background-color: darkgoldenrod;
         }
 
-        /* PROJECTS MODAL */
+        /* PROJECTS MODAL 
 
         .project-modal{
             position: fixed;
@@ -243,7 +267,7 @@ html, body{
 
         }
 
-/* SOCIAL BOARD */
+/* SOCIAL BOARD 
 .social-cards-container{
     display: flex;
     height: 30em;
@@ -254,4 +278,4 @@ html, body{
     flex: 1;
     margin: 3em 3em;
     background-color: orange;
-}
+}*/
