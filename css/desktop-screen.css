@@ -95,15 +95,15 @@ html, body{
     -o-transition: opacity 1s ease-out;
 }
 
-    /* Container of the top left square */
-.text-header-top-left{
+    /* Container of the left-side square */
+.text-header-left{
     margin: 3% 5% auto 22%;
     height: 24%;
     border-bottom: 3px black solid;
     position: relative;
 }
 
-.text-header-top-left h1{
+.text-header-left h1{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -111,15 +111,15 @@ html, body{
     margin-bottom: 0;
 }
 
-    /* Container of the top right square */
-.text-header-top-right{
+    /* Container of the right-side square */
+.text-header-right{
     margin: 3% 22% auto 5%;
     height: 24%;
     border-bottom: 3px black solid;
     position: relative;
 }
 
-.text-header-top-right h1{
+.text-header-right h1{
     position: absolute;
     bottom: 0;
     left: 0;
