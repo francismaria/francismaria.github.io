@@ -136,7 +136,8 @@ function getVerticalMovingDirection(element){
 }
 
 /**
- * Parses the name of the container to get the content div id.
+ * Parses the name of the container to construct the
+ * text content div id, in order to get the element to show.
  * @param {string} name 
  */
 function parseContainerName(name){
