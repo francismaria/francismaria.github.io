@@ -61,15 +61,15 @@ function hideGridElements(activeElement){
             break;
         case 'projects':
             elemsToHide = document.querySelectorAll('#about-container, #social-container, #contact-container');
-            hideSingleGridElement(elemsToHide[0]); hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[2]);
+            hideSingleGridElement(elemsToHide[0], 'left'); hideSingleGridElement(elemsToHide[1], 'left'); hideSingleGridElement(elemsToHide[2], 'right');
             break;
         case 'social':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #contact-container');
-            hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[2]);
+            hideSingleGridElement(elemsToHide[0], 'left'); hideSingleGridElement(elemsToHide[1], 'right'); hideSingleGridElement(elemsToHide[2], 'right');
             break;
         case 'contact':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #social-container');
-            hideSingleGridElement(elemsToHide[0]); hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[2]);
+            hideSingleGridElement(elemsToHide[0], 'left'); hideSingleGridElement(elemsToHide[1], 'right'); hideSingleGridElement(elemsToHide[2], 'left');
             break;
         default: 
             console.log("Not a valid element to hide.");
