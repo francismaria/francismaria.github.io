@@ -51,6 +51,7 @@ function hideElements(elements){
         }
     }, 5);
 }
+
 /**
  *  This function hides all the elements that are to be hidden upon a 
  * click on one of the "squares" to be animated.
@@ -143,6 +144,7 @@ document.querySelectorAll('.grid-elem').forEach(element => {
 
         animationRunning = true;
         
+        // on each time step moves the element
         timer = setInterval(function(){
             if(widthCounter >= maxWidth){
                 if(heightCounter < maxHeight){
