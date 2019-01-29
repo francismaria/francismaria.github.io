@@ -1,3 +1,9 @@
+/**
+ * Smoothly scrolls down a page until a certain height
+ * given an initial height.
+ * @param {*} elemHeight the ending height
+ * @param {*} actualHeight the staring height
+ */
 function smoothDownScroll(elemHeight, actualHeight){
     let currentHeight = actualHeight, timer;
     elemHeight -= 20;
@@ -12,6 +18,14 @@ function smoothDownScroll(elemHeight, actualHeight){
     }, 2);
 }
 
+/**
+ * Grid element animation.
+ * Smoothly transitions the element to disappear of the
+ * screen (to go out of bounds) in a certain direction
+ * (left or right).
+ * @param {*} element element to be hidden
+ * @param {*} direction 
+ */
 function hideSingleGridElement(element, direction){
     let widthCounter = 0;
     let maxWidth = element.parentElement.offsetWidth;
