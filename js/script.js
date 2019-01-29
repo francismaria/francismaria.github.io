@@ -19,31 +19,34 @@ function smoothDownScroll(elemHeight, actualHeight){
 }
 
 /**
- * Grid element animation.
- * Smoothly transitions the element to disappear of the
- * screen (to go out of bounds) in a certain direction
- * (left or right).
- * @param {*} element element to be hidden
- * @param {*} direction direction where the element will be animated (hidden)
+ * Hides all the elements that need to be hidden.
+ * As JavaScript is a single-threaded language the _setInterval 
+ * has a sequential behaviour causing delays and an asynchronous
+ * effect between animations.
+ * This way, this function receives an array with all the elements
+ * to hide and within the setInterval function updates the position
+ * of each of the elements. 
+ * @param {*} elements all the elements to be hidden
  */
-function hideSingleGridElement(element, direction){
+function hideElements(elements){
     let widthCounter = 0;
-    let maxWidth = element.parentElement.offsetWidth;
+    let maxWidth = elements[0].parentElement.offsetWidth;
 
     timer = setInterval(function(){
         if(widthCounter >= maxWidth){
             clearInterval(timer);
         } else {
             widthCounter += 10;
-            if(direction === 'left'){
-                element.style.right = widthCounter + 'px';
-            }
-            else
-                element.style.left = widthCounter + 'px';
+            elements.forEach(function(element){
+                if(element.className.indexOf('grid-elem-left') !== -1){       //checks if the class name contains the element position
+                    element.style.right = widthCounter + 'px';
+                } else {
+                    element.style.left = widthCounter + 'px';
+                }
+            });
         }
-    }, 5);
+    }, 8);
 }
-
 /**
  *  This function hides all the elements that are to be hidden upon a 
  * click on one of the "squares" to be animated.
@@ -57,19 +60,19 @@ function hideGridElements(activeElement){
     switch(activeElement){
         case 'about':
             elemsToHide = document.querySelectorAll('#projects-container, #social-container, #contact-container');
-            hideSingleGridElement(elemsToHide[0], 'right'); hideSingleGridElement(elemsToHide[1], 'left'); hideSingleGridElement(elemsToHide[2], 'right');
+            hideElements(elemsToHide);
             break;
         case 'projects':
             elemsToHide = document.querySelectorAll('#about-container, #social-container, #contact-container');
-            hideSingleGridElement(elemsToHide[0], 'left'); hideSingleGridElement(elemsToHide[1], 'left'); hideSingleGridElement(elemsToHide[2], 'right');
+            hideElements(elemsToHide);
             break;
         case 'social':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #contact-container');
-            hideSingleGridElement(elemsToHide[0], 'left'); hideSingleGridElement(elemsToHide[1], 'right'); hideSingleGridElement(elemsToHide[2], 'right');
+            hideElements(elemsToHide);
             break;
         case 'contact':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #social-container');
-            hideSingleGridElement(elemsToHide[0], 'left'); hideSingleGridElement(elemsToHide[1], 'right'); hideSingleGridElement(elemsToHide[2], 'left');
+            hideElements(elemsToHide);
             break;
         default: 
             console.log("Not a valid element to hide.");
@@ -95,37 +98,53 @@ document.querySelector('#about-container').addEventListener('click', function(e)
             widthCounter += 10;
             elem.style.right = widthCounter + 'px';
         }
-    }, 5);
+    }, 10);
 
     hideGridElements("about");
 });
 
 document.querySelector('#projects-container').addEventListener('click', function(e){
     e.preventDefault();
-    e.preventDefault();
-    let elem = document.querySelector('#about-container');
+    let elem = document.querySelector('#projects-container');
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
     let maxHeight = elem.parentElement.offsetHeight - elem.offsetHeight;
     
     timer = setInterval(function(){
-
-    }, 5);
+        if(widthCounter >= maxWidth){
+            if(heightCounter < maxHeight){
+                heightCounter += 5;
+                elem.style.bottom = heightCounter + 'px';
+            } else
+                clearInterval(timer);
+        } else {
+            widthCounter += 10;
+            elem.style.left = widthCounter + 'px';
+        }
+    }, 10);
 
     hideGridElements("projects");
 });
 
 document.querySelector('#social-container').addEventListener('click', function(e){
     e.preventDefault();
-    e.preventDefault();
-    let elem = document.querySelector('#about-container');
+    let elem = document.querySelector('#social-container');
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
-    let maxHeight = elem.parentElement.offsetHeight - elem.offsetHeight;
+    let maxHeight = elem.parentElement.offsetHeight - (elem.offsetHeight + marginStyle);
     
     timer = setInterval(function(){
-
-    }, 5);
+        if(widthCounter >= maxWidth){
+            if(heightCounter < maxHeight){
+                heightCounter += 5;
+                elem.style.top = heightCounter + 'px';
+            } else
+                clearInterval(timer);
+        } else {
+            widthCounter += 10;
+            elem.style.right = widthCounter + 'px';
+        }
+    }, 10);
 
     hideGridElements("social");
 });
@@ -135,7 +154,7 @@ document.querySelector('#contact-container').addEventListener('click', function(
 
     timer = setInterval(function(){
 
-    }, 5);
+    }, 10);
 
     hideGridElements("contact");
 });
