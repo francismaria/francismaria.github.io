@@ -38,14 +38,15 @@ function hideElements(elements){
         } else {
             widthCounter += 10;
             elements.forEach(function(element){
-                if(element.className.indexOf('grid-elem-left') !== -1){       //checks if the class name contains the element position
+                //checks if the class name contains the element position
+                if(element.className.indexOf('grid-elem-left') !== -1){       
                     element.style.right = widthCounter + 'px';
                 } else {
                     element.style.left = widthCounter + 'px';
                 }
             });
         }
-    }, 8);
+    }, 5);
 }
 /**
  *  This function hides all the elements that are to be hidden upon a 
@@ -98,7 +99,7 @@ document.querySelector('#about-container').addEventListener('click', function(e)
             widthCounter += 10;
             elem.style.right = widthCounter + 'px';
         }
-    }, 10);
+    }, 8);
 
     hideGridElements("about");
 });
@@ -151,9 +152,22 @@ document.querySelector('#social-container').addEventListener('click', function(e
 
 document.querySelector('#contact-container').addEventListener('click', function(e){
     e.preventDefault();
+    let elem = document.querySelector('#contact-container');
+    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
+    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
+    let maxHeight = elem.parentElement.offsetHeight - (elem.offsetHeight + marginStyle);
 
     timer = setInterval(function(){
-
+        if(widthCounter >= maxWidth){
+            if(heightCounter < maxHeight){
+                heightCounter += 5;
+                elem.style.top = heightCounter + 'px';
+            } else
+                clearInterval(timer);
+        } else {
+            widthCounter += 10;
+            elem.style.left = widthCounter + 'px';
+        }
     }, 10);
 
     hideGridElements("contact");
