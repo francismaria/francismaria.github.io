@@ -12,11 +12,29 @@ function smoothDownScroll(elemHeight, actualHeight){
     }, 2);
 }
 
+function hideSingleGridElement(element, direction){
+    let widthCounter = 0;
+    let maxWidth = element.parentElement.offsetWidth;
+
+    timer = setInterval(function(){
+        if(widthCounter >= maxWidth){
+            clearInterval(timer);
+        } else {
+            widthCounter += 10;
+            if(direction === 'left'){
+                element.style.right = widthCounter + 'px';
+            }
+            else
+                element.style.left = widthCounter + 'px';
+        }
+    }, 5);
+}
+
 /**
- * This function hides all the elements that are to be hidden upon a 
+ *  This function hides all the elements that are to be hidden upon a 
  * click on one of the "squares" to be animated.
- * It receives the name of the element that was clicked in order to
- * get all of the other elements for they can be hidden.
+ *  It receives the name of the element that was clicked in order to
+ * get all the other elements so they can be hidden.
  * @param {string} activeElement 
  */
 function hideGridElements(activeElement){
@@ -25,22 +43,24 @@ function hideGridElements(activeElement){
     switch(activeElement){
         case 'about':
             elemsToHide = document.querySelectorAll('#projects-container, #social-container, #contact-container');
+            hideSingleGridElement(elemsToHide[0], 'right'); hideSingleGridElement(elemsToHide[1], 'left'); hideSingleGridElement(elemsToHide[2], 'right');
             break;
         case 'projects':
             elemsToHide = document.querySelectorAll('#about-container, #social-container, #contact-container');
+            hideSingleGridElement(elemsToHide[0]); hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[2]);
             break;
         case 'social':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #contact-container');
+            hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[2]);
             break;
         case 'contact':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #social-container');
+            hideSingleGridElement(elemsToHide[0]); hideSingleGridElement(elemsToHide[1]); hideSingleGridElement(elemsToHide[2]);
             break;
         default: 
             console.log("Not a valid element to hide.");
             break;
     }
-    
-    console.log(elemsToHide[0]);
 }
 
 document.querySelector('#about-container').addEventListener('click', function(e){
@@ -53,7 +73,7 @@ document.querySelector('#about-container').addEventListener('click', function(e)
     timer = setInterval(function(){
         if(widthCounter >= maxWidth){
             if(heightCounter < maxHeight){
-                heightCounter += 10;
+                heightCounter += 5;
                 elem.style.bottom = heightCounter + 'px';
             } else
                 clearInterval(timer);
