@@ -62,19 +62,19 @@ function hideGridElements(activeElement){
     let elemsToHide = [];
     
     switch(activeElement){
-        case 'about':
+        case 'about-container':
             elemsToHide = document.querySelectorAll('#projects-container, #social-container, #contact-container');
             hideElements(elemsToHide);
             break;
-        case 'projects':
+        case 'projects-container':
             elemsToHide = document.querySelectorAll('#about-container, #social-container, #contact-container');
             hideElements(elemsToHide);
             break;
-        case 'social':
+        case 'social-container':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #contact-container');
             hideElements(elemsToHide);
             break;
-        case 'contact':
+        case 'contact-container':
             elemsToHide = document.querySelectorAll('#about-container, #projects-container, #social-container');
             hideElements(elemsToHide);
             break;
@@ -84,112 +84,82 @@ function hideGridElements(activeElement){
     }
 }
 
-document.querySelector('#about-container').addEventListener('click', function(e){
-    e.preventDefault();
-    if(animationRunning) return;
-    animationRunning = true;
-    let elem = document.querySelector('#about-container');
-    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
-    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
-    let maxHeight = elem.parentElement.offsetHeight - elem.offsetHeight;
-    
-    timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            if(heightCounter < maxHeight){
-                heightCounter += 5;
-                elem.style.bottom = heightCounter + 'px';
+/**
+ * Changes the style (the positioning property) of the element.
+ * @param {*} element the element to be moved
+ * @param {*} direction the direction which it will move
+ * @param {*} step how much will it move
+ */
+function moveElement(element, direction, step){
+    switch(direction){
+        case 'top':
+            element.style.top = step + 'px';
+            break;
+        case 'bottom':
+            element.style.bottom = step + 'px';
+            break;
+        case 'left':
+            element.style.left = step + 'px';
+            break;
+        case 'right':
+            element.style.right = step + 'px';
+            break;
+        default:
+            console.log("Not a valid direction to move the element");
+            break;
+    }
+}
+
+/**
+ * Auxiliary function which returns the horizontal direction
+ * on which the element shall be animated (left or right).
+ */
+function getHorizontalMovingDirection(element){
+    if(element.className.indexOf('grid-elem-left') !== -1)
+        return 'right';
+    return 'left';
+}
+
+/**
+ * Auxiliary function which returns the vertical direction
+ * on which the element shall be animated (top or bottom).
+ */
+function getVerticalMovingDirection(element){
+    if(element.className.indexOf('grid-elem-top') !== -1)
+        return 'bottom';
+    return 'top';
+}
+
+document.querySelectorAll('.grid-elem').forEach(element => {
+    element.addEventListener('click', function(e) {
+        e.preventDefault();
+        if(animationRunning) return;
+        
+        let widthCounter = 0, heightCounter = 0, marginStyle = 50;
+        let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
+        let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
+        let horizontalDirection = getHorizontalMovingDirection(this),
+            verticalDirection = getVerticalMovingDirection(this);
+
+        animationRunning = true;
+        
+        timer = setInterval(function(){
+            if(widthCounter >= maxWidth){
+                if(heightCounter < maxHeight){
+                    heightCounter += 5;
+                    moveElement(element, verticalDirection, heightCounter);
+                } else {
+                    animationRunning = false;
+                    clearInterval(timer);
+                }
             } else {
-                animationRunning = false;
-                clearInterval(timer);
+                widthCounter += 10;
+                moveElement(element, horizontalDirection, widthCounter);
             }
-        } else {
-            widthCounter += 10;
-            elem.style.right = widthCounter + 'px';
-        }
-    }, 8);
-
-    hideGridElements("about");
-});
-
-document.querySelector('#projects-container').addEventListener('click', function(e){
-    e.preventDefault();
-    if(animationRunning) return; 
-    animationRunning = true;
-    let elem = document.querySelector('#projects-container');
-    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
-    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
-    let maxHeight = elem.parentElement.offsetHeight - elem.offsetHeight;
-    
-    timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            if(heightCounter < maxHeight){
-                heightCounter += 5;
-                elem.style.bottom = heightCounter + 'px';
-            } else {
-                animationRunning = false;
-                clearInterval(timer);
-            }
-        } else {
-            widthCounter += 10;
-            elem.style.left = widthCounter + 'px';
-        }
-    }, 10);
-
-    hideGridElements("projects");
-});
-
-document.querySelector('#social-container').addEventListener('click', function(e){
-    e.preventDefault();
-    if(animationRunning) return;
-    animationRunning = true;
-    let elem = document.querySelector('#social-container');
-    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
-    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
-    let maxHeight = elem.parentElement.offsetHeight - (elem.offsetHeight + marginStyle);
-    
-    timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            if(heightCounter < maxHeight){
-                heightCounter += 5;
-                elem.style.top = heightCounter + 'px';
-            } else {
-                animationRunning = false;
-                clearInterval(timer);
-            }
-        } else {
-            widthCounter += 10;
-            elem.style.right = widthCounter + 'px';
-        }
-    }, 10);
-
-    hideGridElements("social");
-});
-
-document.querySelector('#contact-container').addEventListener('click', function(e){
-    e.preventDefault();
-    if(animationRunning) return;
-    animationRunning = true;
-    let elem = document.querySelector('#contact-container');
-    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
-    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
-    let maxHeight = elem.parentElement.offsetHeight - (elem.offsetHeight + marginStyle);
-
-    timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            if(heightCounter < maxHeight){
-                heightCounter += 5;
-                elem.style.top = heightCounter + 'px';
-            } else {
-                animationRunning = false;
-                clearInterval(timer);
-            }
-        } else {
-            widthCounter += 10;
-            elem.style.left = widthCounter + 'px';
-        }
-    }, 10);
-
-    hideGridElements("contact");
+        }, 10);
+        
+        hideGridElements(this.id);
+    })
 });
 
 
@@ -332,7 +302,6 @@ document.querySelectorAll('.show-more-btn').forEach(card => {
 document.querySelectorAll('.exit-modal-btn').forEach(exitBtn => {
     exitBtn.addEventListener('click', function(e){
         e.preventDefault();
-        console.log('clicked okok')
         hideModal(this.parentNode);
     })
 })
