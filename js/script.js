@@ -114,6 +114,8 @@ function moveElement(element, direction, step){
 /**
  * Auxiliary function which returns the horizontal direction
  * on which the element shall be animated (left or right).
+ * @param {*} element element to check its horizontal position
+ * in the grid.
  */
 function getHorizontalMovingDirection(element){
     if(element.className.indexOf('grid-elem-left') !== -1)
@@ -124,11 +126,43 @@ function getHorizontalMovingDirection(element){
 /**
  * Auxiliary function which returns the vertical direction
  * on which the element shall be animated (top or bottom).
+ * @param {*} element element to check its vertical position
+ * in the grid.
  */
 function getVerticalMovingDirection(element){
     if(element.className.indexOf('grid-elem-top') !== -1)
         return 'bottom';
     return 'top';
+}
+
+/**
+ * Parses the name of the container to get the content div id.
+ * @param {string} name 
+ */
+function parseContainerName(name){
+    return name.split('-')[0] + '-content';
+}
+
+/**
+ * Shows the text of the highlighted "square" section.
+ * @param {string} containerName 
+ */
+function showTextContent(containerName){
+    let element = document.getElementById(parseContainerName(containerName));
+
+    element.style.visibility = 'visible';
+    element.style.opacity = '1';
+}
+
+/**
+ * Hides the text of the highlighted "square" section.
+ * @param {container} containerName 
+ */
+function hideTextContent(containerName){
+    let element = document.getElementById(parseContainerName(containerName));
+
+    element.style.visibility = 'hidden';
+    element.style.opacity = '0';
 }
 
 document.querySelectorAll('.grid-elem').forEach(element => {
@@ -161,6 +195,7 @@ document.querySelectorAll('.grid-elem').forEach(element => {
         }, 10);
         
         hideGridElements(this.id);
+        showTextContent(this.id);
     })
 });
 

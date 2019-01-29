@@ -83,6 +83,12 @@ html, body{
     position: absolute;
     width: 80%;
     margin-left: 10%;   /*centers element*/
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -webkit-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
 }
 
 .grid-container{
