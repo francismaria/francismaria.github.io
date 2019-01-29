@@ -1,3 +1,5 @@
+let animationRunning = false;
+
 /**
  * Smoothly scrolls down a page until a certain height
  * given an initial height.
@@ -34,6 +36,7 @@ function hideElements(elements){
 
     timer = setInterval(function(){
         if(widthCounter >= maxWidth){
+            animationRunning = false;
             clearInterval(timer);
         } else {
             widthCounter += 10;
@@ -83,6 +86,8 @@ function hideGridElements(activeElement){
 
 document.querySelector('#about-container').addEventListener('click', function(e){
     e.preventDefault();
+    if(animationRunning) return;
+    animationRunning = true;
     let elem = document.querySelector('#about-container');
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
@@ -93,8 +98,10 @@ document.querySelector('#about-container').addEventListener('click', function(e)
             if(heightCounter < maxHeight){
                 heightCounter += 5;
                 elem.style.bottom = heightCounter + 'px';
-            } else
+            } else {
+                animationRunning = false;
                 clearInterval(timer);
+            }
         } else {
             widthCounter += 10;
             elem.style.right = widthCounter + 'px';
@@ -106,6 +113,8 @@ document.querySelector('#about-container').addEventListener('click', function(e)
 
 document.querySelector('#projects-container').addEventListener('click', function(e){
     e.preventDefault();
+    if(animationRunning) return; 
+    animationRunning = true;
     let elem = document.querySelector('#projects-container');
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
@@ -116,8 +125,10 @@ document.querySelector('#projects-container').addEventListener('click', function
             if(heightCounter < maxHeight){
                 heightCounter += 5;
                 elem.style.bottom = heightCounter + 'px';
-            } else
+            } else {
+                animationRunning = false;
                 clearInterval(timer);
+            }
         } else {
             widthCounter += 10;
             elem.style.left = widthCounter + 'px';
@@ -129,6 +140,8 @@ document.querySelector('#projects-container').addEventListener('click', function
 
 document.querySelector('#social-container').addEventListener('click', function(e){
     e.preventDefault();
+    if(animationRunning) return;
+    animationRunning = true;
     let elem = document.querySelector('#social-container');
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
@@ -139,8 +152,10 @@ document.querySelector('#social-container').addEventListener('click', function(e
             if(heightCounter < maxHeight){
                 heightCounter += 5;
                 elem.style.top = heightCounter + 'px';
-            } else
+            } else {
+                animationRunning = false;
                 clearInterval(timer);
+            }
         } else {
             widthCounter += 10;
             elem.style.right = widthCounter + 'px';
@@ -152,6 +167,8 @@ document.querySelector('#social-container').addEventListener('click', function(e
 
 document.querySelector('#contact-container').addEventListener('click', function(e){
     e.preventDefault();
+    if(animationRunning) return;
+    animationRunning = true;
     let elem = document.querySelector('#contact-container');
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
@@ -162,8 +179,10 @@ document.querySelector('#contact-container').addEventListener('click', function(
             if(heightCounter < maxHeight){
                 heightCounter += 5;
                 elem.style.top = heightCounter + 'px';
-            } else
+            } else {
+                animationRunning = false;
                 clearInterval(timer);
+            }
         } else {
             widthCounter += 10;
             elem.style.left = widthCounter + 'px';
