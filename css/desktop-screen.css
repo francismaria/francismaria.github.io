@@ -132,7 +132,7 @@ html, body{
     flex-direction: row;
 }
 
-.cv-sidebar-content{
+.sidebar-container{
     margin: 3em 1em 1em 3em;
     height: 30em;
     width: 18em;
