@@ -24,7 +24,7 @@ function smoothDownScroll(elemHeight, actualHeight){
  * screen (to go out of bounds) in a certain direction
  * (left or right).
  * @param {*} element element to be hidden
- * @param {*} direction 
+ * @param {*} direction direction where the element will be animated (hidden)
  */
 function hideSingleGridElement(element, direction){
     let widthCounter = 0;
@@ -102,20 +102,32 @@ document.querySelector('#about-container').addEventListener('click', function(e)
 
 document.querySelector('#projects-container').addEventListener('click', function(e){
     e.preventDefault();
-
+    e.preventDefault();
+    let elem = document.querySelector('#about-container');
+    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
+    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
+    let maxHeight = elem.parentElement.offsetHeight - elem.offsetHeight;
+    
     timer = setInterval(function(){
 
-    });
-    
+    }, 5);
+
+    hideGridElements("projects");
 });
 
 document.querySelector('#social-container').addEventListener('click', function(e){
     e.preventDefault();
-
+    e.preventDefault();
+    let elem = document.querySelector('#about-container');
+    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
+    let maxWidth = elem.parentElement.offsetWidth - (elem.offsetWidth + marginStyle);
+    let maxHeight = elem.parentElement.offsetHeight - elem.offsetHeight;
+    
     timer = setInterval(function(){
 
-    });
-    
+    }, 5);
+
+    hideGridElements("social");
 });
 
 document.querySelector('#contact-container').addEventListener('click', function(e){
@@ -123,8 +135,9 @@ document.querySelector('#contact-container').addEventListener('click', function(
 
     timer = setInterval(function(){
 
-    });
-    
+    }, 5);
+
+    hideGridElements("contact");
 });
 
 
