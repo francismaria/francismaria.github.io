@@ -166,6 +166,17 @@ function hideTextContent(containerName){
     element.style.opacity = '0';
 }
 
+/**
+ * Auxiliary function to toggle a class on an element to
+ * be possible to check wether the animation occured or not.
+ * @param {*} element element to toggle the class
+ * @param {string} classname name of the class to add
+ */
+function toggleClassName(element, classname){
+    element.className += ' ' + classname;
+    console.log(element.className);
+}
+
 document.querySelectorAll('.grid-elem').forEach(element => {
     element.addEventListener('click', function(e) {
         e.preventDefault();
@@ -179,132 +190,32 @@ document.querySelectorAll('.grid-elem').forEach(element => {
 
         animationRunning = true;
         
-        // on each time step moves the element
-        timer = setInterval(function(){
-            if(widthCounter >= maxWidth){
-                if(heightCounter < maxHeight){
-                    heightCounter += 5;
-                    moveElement(element, verticalDirection, heightCounter);
+        if(element.className.indexOf('animated') == -1){
+            // on each time step moves the element
+            timer = setInterval(function(){
+                if(widthCounter >= maxWidth){
+                    if(heightCounter < maxHeight){
+                        heightCounter += 5;
+                        moveElement(element, verticalDirection, heightCounter);
+                    } else {
+                        animationRunning = false;
+                        clearInterval(timer);
+                    }
                 } else {
-                    animationRunning = false;
-                    clearInterval(timer);
+                    widthCounter += 10;
+                    moveElement(element, horizontalDirection, widthCounter);
                 }
-            } else {
-                widthCounter += 10;
-                moveElement(element, horizontalDirection, widthCounter);
-            }
-        }, 10);
-        
-        hideGridElements(this.id);
-        showTextContent(this.id);
+            }, 10);
+            hideGridElements(this.id);
+            showTextContent(this.id);
+            toggleClassName(element, 'animated');
+        } else {
+            console.log("HIDE!");
+        }
     })
 });
 
-
-/*
-document.querySelectorAll('.slide-down-btn a[href^="#"], #main-board nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        smoothDownScroll(document.querySelector(this.getAttribute("href")).offsetTop, window.pageYOffset);
-    })
-});
-
-            /* HOBBIES SECTION  
-
-// MOUSE OVER
-
-document.querySelectorAll('.hobbie-card.left-card').forEach(card => {
-    card.addEventListener('mouseover', function(e){
-        e.preventDefault();
-        let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-left');
-        slider.style.marginLeft = '50%';
-    })
-})
-
-document.querySelectorAll('.hobbie-card.right-card').forEach(card => {
-    card.addEventListener('mouseover', function(e){
-        e.preventDefault();
-        let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-right');
-        slider.style.marginRight = '50%';
-    })
-})
-
-// MOUSE LEAVE 
-
-document.querySelectorAll('.hobbie-card.left-card').forEach(card => {
-    card.addEventListener('mouseleave', function(e){
-        e.preventDefault();
-        let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-left');
-        slider.style.marginLeft = '12%';
-    })
-})
-
-document.querySelectorAll('.hobbie-card.right-card').forEach(card => {
-    card.addEventListener('mouseleave', function(e){
-        e.preventDefault();
-        let slider = this.parentNode.querySelector('.hobbie-card.hobbie-slider-right');
-        slider.style.marginRight = '12%';
-    })
-})
-
-
-//sliders-buttons
-
-document.querySelectorAll('.slide-btn-container.left-img-slider').forEach(slider => {
-    slider.addEventListener('click', function(e){
-        e.preventDefault();
-        let slideContainer = this.parentNode;
-        //console.log(window.getComputedStyle(slideContainer).getPropertyValue('margin-left'));
-        slideContainer.style.marginLeft = '33em';
-    })
-})
-
-document.querySelectorAll('.slide-btn-container.right-img-slider').forEach(slider => {
-    slider.addEventListener('click', function(e){
-        e.preventDefault();
-        let slideContainer = this.parentNode;
-        slideContainer.style.marginRight = '33em';
-    })
-})
-*/
-
-        /* PROJECTS SECTION */
-/*
-function decreaseContainer(container) {
-    document.body.style.backgroundColor = 'transparent';
-    document.body.style.opacity = '1'
-    document.body.style.zIndex = '0'
-
-    container.parentNode.style.height = '50%';
-
-    container.style.width = '50%';
-    container.style.zIndex = 0;
-    container.style.opacity = '1'
-}
-
-function increaseContainer(container) {
-    /*document.body.style.backgroundColor = 'black';
-    document.body.style.opacity = '0.5'
-    document.body.style.zIndex = '0'
-
-    container.style.height = '80%';
-    container.style.width = '90%';
-    container.style.zIndex = 4;
-    container.style.opacity = '1'
-}
-
-document.querySelectorAll('.show-more-btn').forEach(card => {
-    card.addEventListener('click', function(e){
-        e.preventDefault();
-    
-    let container = this.parentNode;
-    
-    if(container.style.height === '80%')
-        decreaseContainer(container)
-    else
-        increaseContainer(container)
-    })
-})*/
+/* MODALS */
 
 
 function showModal(modal) {
