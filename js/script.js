@@ -174,7 +174,15 @@ function hideTextContent(containerName){
  */
 function toggleClassName(element, classname){
     element.className += ' ' + classname;
-    console.log(element.className);
+}
+
+/**
+ * Auxiliary function to remove a class from an HTML element.
+ * @param {*} element element to remove the class
+ * @param {*} classname name of the class to be removed
+ */
+function removeClassName(element, classname){
+    element.classList.remove(classname);
 }
 
 document.querySelectorAll('.grid-elem').forEach(element => {
@@ -210,7 +218,9 @@ document.querySelectorAll('.grid-elem').forEach(element => {
             showTextContent(this.id);
             toggleClassName(element, 'animated');
         } else {
-            console.log("HIDE!");
+            hideTextContent(this.id);
+            //showGridElements(this.id);
+            removeClassName(element, 'animated');
         }
     })
 });

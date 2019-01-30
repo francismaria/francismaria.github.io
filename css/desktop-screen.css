@@ -90,10 +90,10 @@ html, body{
     visibility: hidden;
     opacity: 0;
     background-color: white;
-    transition: opacity 1s ease-out;
-    -moz-transition: opacity 1s ease-out;
-    -webkit-transition: opacity 1s ease-out;
-    -o-transition: opacity 1s ease-out;
+    transition: visibility 1s, opacity 1s ease-out;
+    -moz-transition: visibility 1s, opacity 1s ease-out;
+    -webkit-transition: visibility 1s, opacity 1s ease-out;
+    -o-transition: visibility 1s, opacity 1s ease-out;
 }
 
     /* Container of the left-side square */
