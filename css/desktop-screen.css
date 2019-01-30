@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300|Montserrat:300i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates');
 
 html, body{
     margin: auto 0;
@@ -101,6 +102,7 @@ html, body{
     height: 24%;
     border-bottom: 3px black solid;
     position: relative;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .text-header-left h1{
@@ -117,6 +119,7 @@ html, body{
     height: 24%;
     border-bottom: 3px black solid;
     position: relative;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .text-header-right h1{
@@ -133,7 +136,8 @@ html, body{
     height: 65%;
 }
 
-    /* SIDEBAR CONTAINERS */
+/*--------- SIDEBAR CONTAINERS ---------*/
+
 .sidebar-container-bottom-left{
     margin: 0 2% 1% 3%;
     height: 97%;
@@ -169,17 +173,26 @@ html, body{
     background-color: gainsboro;
 }
 
-.text-content-left{
+/*---------- TEXT CONTENT -----------*/
+
+.text-content{
     flex: 2;
-    margin: 3em auto 1em 5%;
+    overflow-y: scroll;
     background-color: gainsboro;   
 }
 
-.text-content-right{
-    flex: 2;
-    margin: 3em 5% 1em auto;
-    background-color: gainsboro;
+.text-content-left{
+    
+    margin: 3em auto 1em 5%;
 }
+
+.text-content-right{
+    margin: 3em 5% 1em auto;
+}
+
+/*--------------------------------------
+ *            GRID ELEMENTS
+ --------------------------------------*/
 
 .grid-container{
     position: absolute;
