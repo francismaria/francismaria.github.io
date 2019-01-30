@@ -130,10 +130,18 @@ html, body{
 .text-container{
     display: flex;
     flex-direction: row;
+    height: 65%;
 }
 
-.sidebar-container{
-    margin: 3em 1em 1em 3em;
+.sidebar-container-bottom-left{
+    margin: 0 2em 1em 3em;
+    height: 30%;
+    width: 17%;
+    background-color: gainsboro;
+}
+
+.sidebar-container-top-left{
+    margin: -10em 2em 3em 3em;
     height: 30em;
     width: 18em;
     background-color: gainsboro;
@@ -162,7 +170,7 @@ html, body{
 
 .grid-elem{
     height: 50%;
-    width: 35%;
+    width: 34.5%;
     background-color: gainsboro;
 }
 
