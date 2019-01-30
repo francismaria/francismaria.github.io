@@ -134,8 +134,8 @@ html, body{
 }
 
 .sidebar-container-bottom-left{
-    margin: 0 2em 1em 3em;
-    height: 30%;
+    margin: 0 2% 1% 3%;
+    height: 97%;
     width: 17%;
     background-color: gainsboro;
 }
