@@ -289,8 +289,6 @@ function hideAnimation(element){
 
     // on each time step moves the element
     let timer = setInterval(function(){
-        //element.style.right = (maxWidth - widthCounter) + 'px';
-
         if(widthCounter >= maxWidth){
             if(heightCounter < maxHeight){
                 heightCounter += 5;
@@ -308,8 +306,8 @@ function hideAnimation(element){
     }, 10);
 
     hideTextContent(element.id);
-    /*showGridElements(this.id);
-    removeClassName(element, 'animated');*/
+    /*showGridElements(this.id);*/
+    removeClassName(element, 'animated');
 }
 
 document.querySelectorAll('.grid-elem').forEach(element => {
