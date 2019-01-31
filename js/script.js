@@ -52,10 +52,14 @@ function hideElements(elements){
     }, 5);
 }
 
+function showElements(elements){
+    
+}
+
 /**
- *  This function hides all the elements that are to be hidden upon a 
+ * This function hides all the elements that are to be hidden upon a 
  * click on one of the "squares" to be animated.
- *  It receives the name of the element that was clicked in order to
+ * It receives the name of the element that was clicked in order to
  * get all the other elements so they can be hidden.
  * @param {string} activeElement 
  */
@@ -83,6 +87,40 @@ function hideGridElements(activeElement){
             console.log("Not a valid element to hide.");
             break;
     }
+}
+
+/**
+ * This function shows all the elements that are hidden.
+ * It receives the name of the element that was clicked in order to
+ * get all the other elements so they can be shown and return to their
+ * standard position.
+ * @param {string} activeElement 
+ */
+function showGridElements(activeElement){
+    let elemsToShow = [];
+
+    switch(activeElement){
+        case 'about-container':
+            elemsToShow = document.querySelectorAll('#projects-container, #social-container, #contact-container');
+            showElements(elemsToShow);
+            break;
+        case 'projects-container':
+            elemsToShow = document.querySelectorAll('#about-container, #social-container, #contact-container');
+            showElements(elemsToShow);
+            break;
+        case 'social-container':
+            elemsToShow = document.querySelectorAll('#about-container, #projects-container, #contact-container');
+            showElements(elemsToShow);
+            break;
+        case 'contact-container':
+            elemsToShow = document.querySelectorAll('#about-container, #projects-container, #social-container');
+            showElements(elemsToShow);
+            break;
+        default: 
+            console.log("Not a valid element to hide.");
+            break;
+    }
+    console.log("SHOW ELEMENTS ANIMATION");
 }
 
 /**
@@ -219,14 +257,13 @@ document.querySelectorAll('.grid-elem').forEach(element => {
             toggleClassName(element, 'animated');
         } else {
             hideTextContent(this.id);
-            //showGridElements(this.id);
+            showGridElements(this.id);
             removeClassName(element, 'animated');
         }
     })
 });
 
 /* MODALS */
-
 
 function showModal(modal) {
     modal.style.visibility = 'visible';
