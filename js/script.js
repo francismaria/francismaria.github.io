@@ -42,11 +42,7 @@ function hideElements(elements){
             widthCounter += 10;
             elements.forEach(function(element){
                 //checks if the class name contains the element position
-                if(element.className.indexOf('grid-elem-left') !== -1){       
-                    element.style.right = widthCounter + 'px';
-                } else {
-                    element.style.left = widthCounter + 'px';
-                }
+                moveElement(element, getHorizontalMovingDirection(element), widthCounter);
             });
         }
     }, 5);
@@ -71,11 +67,7 @@ function showElements(elements){
             widthCounter += 10;
             elements.forEach(function(element){
                 //checks if the class name contains the element position
-                if(element.className.indexOf('grid-elem-left') !== -1){       
-                    element.style.left = widthCounter + 'px';
-                } else {
-                    element.style.right = widthCounter + 'px';
-                }
+                moveElement(element, getHorizontalMovingDirection(element), (maxWidth-widthCounter));
             });
         }
     }, 5);
@@ -321,7 +313,7 @@ function hideAnimation(element){
     }, 10);
 
     hideTextContent(element.id);
-    /*showGridElements(this.id);*/
+    showGridElements(element.id);
     removeClassName(element, 'animated');
 }
 
