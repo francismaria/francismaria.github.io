@@ -137,33 +137,30 @@ html, body{
 }
 
 /*--------- SIDEBAR CONTAINERS ---------*/
+.sidebar{
+    border-radius: 0 0 20px 20px;
+    width: 17%;
+    background-color: gainsboro;
+}
 
 .sidebar-container-bottom-left{
     margin: 0 2% 1% 3%;
     height: 97%;
-    width: 17%;
-    background-color: gainsboro;
 }
 
 .sidebar-container-bottom-right{
     margin: 0 2% 1% 3%;
     height: 97%;
-    width: 17%;
-    background-color: gainsboro;
 }
 
 .sidebar-container-top-left{
     margin: -12% 2% 3% 3%;
     height: 100%;
-    width: 17%;
-    background-color: gainsboro;
 }
 
 .sidebar-container-bottom-right{
     margin: 0 3% 1% 2%;
-    height: 97%;
-    width: 17%;
-    background-color: gainsboro;
+    height: 97%
 }
 
 .sidebar-container-top-right{

@@ -21,60 +21,6 @@ function smoothDownScroll(elemHeight, actualHeight){
 }
 
 /**
- * Hides all the elements that need to be hidden.
- * As JavaScript is a single-threaded language the _setInterval 
- * has a sequential behaviour causing delays and an asynchronous
- * effect between animations.
- * This way, this function receives an array with all the elements
- * to hide and within the setInterval function updates the position
- * of each of the elements. 
- * @param {*} elements all the elements to be hidden
- */
-function hideElements(elements){
-    let widthCounter = 0;
-    let maxWidth = elements[0].parentElement.offsetWidth;
-
-    let timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            animationRunning = false;
-            clearInterval(timer);
-        } else {
-            widthCounter += 10;
-            elements.forEach(function(element){
-                //checks if the class name contains the element position
-                moveElement(element, getHorizontalMovingDirection(element), widthCounter);
-            });
-        }
-    }, 5);
-}
-
-/**
- * Shows all the elements that need to be shown.
- * This way, this function receives an array with all the elements
- * to show and within the setInterval function updates the position
- * of each of the elements to its original position. 
- * @param {*} elements all the elements to be show
- */
-function showElements(elements){
-    let widthCounter = 0;
-    let maxWidth = elements[0].parentElement.offsetWidth;
- 
-    let timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            animationRunning = false;
-            clearInterval(timer);
-        } else {
-            widthCounter += 10;
-            elements.forEach(function(element){
-                //checks if the class name contains the element position
-                moveElement(element, getHorizontalMovingDirection(element), (maxWidth-widthCounter));
-            });
-        }
-    }, 5);
-
-}
-
-/**
  * This function hides all the elements that are to be hidden upon a 
  * click on one of the "squares" to be animated.
  * It receives the name of the element that was clicked in order to
@@ -164,6 +110,57 @@ function moveElement(element, direction, step){
             console.log("Not a valid direction to move the element");
             break;
     }
+}
+
+/**
+ * Hides all the elements that need to be hidden.
+ * As JavaScript is a single-threaded language the _setInterval 
+ * has a sequential behaviour causing delays and an asynchronous
+ * effect between animations.
+ * This way, this function receives an array with all the elements
+ * to hide and within the setInterval function updates the position
+ * of each of the elements. 
+ * @param {*} elements all the elements to be hidden
+ */
+function hideElements(elements){
+    let widthCounter = 0;
+    let maxWidth = elements[0].parentElement.offsetWidth;
+
+    let timer = setInterval(function(){
+        if(widthCounter >= maxWidth){
+            animationRunning = false;
+            clearInterval(timer);
+        } else {
+            widthCounter += 10;
+            elements.forEach(function(element){
+                moveElement(element, getHorizontalMovingDirection(element), widthCounter);
+            });
+        }
+    }, 5);
+}
+
+/**
+ * Shows all the elements that need to be shown.
+ * This way, this function receives an array with all the elements
+ * to show and within the setInterval function updates the position
+ * of each of the elements to its original position. 
+ * @param {*} elements all the elements to be show
+ */
+function showElements(elements){
+    let widthCounter = 0;
+    let maxWidth = elements[0].parentElement.offsetWidth;
+ 
+    let timer = setInterval(function(){
+        if(widthCounter >= maxWidth){
+            animationRunning = false;
+            clearInterval(timer);
+        } else {
+            widthCounter += 3;
+            elements.forEach(function(element){
+                moveElement(element, getHorizontalMovingDirection(element), (maxWidth-widthCounter));
+            });
+        }
+    }, 5);
 }
 
 /**
@@ -297,8 +294,8 @@ function hideAnimation(element){
     // on each time step moves the element
     let timer = setInterval(function(){
         if(widthCounter >= maxWidth){
-            if(heightCounter < maxHeight){
-                heightCounter += 5;
+            if(heightCounter <= maxHeight){
+                heightCounter += 1;
                 let heightStep = maxHeight - heightCounter;
                 moveElement(element, verticalDirection, heightStep);
             } else {
@@ -306,7 +303,7 @@ function hideAnimation(element){
                 clearInterval(timer);
             }
         } else {
-            widthCounter += 10;
+            widthCounter += 3;
             let widthStep = maxWidth - widthCounter;
             moveElement(element, horizontalDirection, widthStep);
         }
