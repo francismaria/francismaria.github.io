@@ -320,39 +320,6 @@ document.querySelectorAll('.grid-elem').forEach(element => {
         } else {
             hideAnimation(element);
         }
-        /*
-        let widthCounter = 0, heightCounter = 0, marginStyle = 50;
-        let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
-        let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
-        let horizontalDirection = getHorizontalMovingDirection(this),
-            verticalDirection = getVerticalMovingDirection(this);
-
-        animationRunning = true;
-        
-        if(element.className.indexOf('animated') == -1){
-            // on each time step moves the element
-            timer = setInterval(function(){
-                if(widthCounter >= maxWidth){
-                    if(heightCounter < maxHeight){
-                        heightCounter += 5;
-                        moveElement(element, verticalDirection, heightCounter);
-                    } else {
-                        animationRunning = false;
-                        clearInterval(timer);
-                    }
-                } else {
-                    widthCounter += 10;
-                    moveElement(element, horizontalDirection, widthCounter);
-                }
-            }, 10);
-            hideGridElements(this.id);
-            showTextContent(this.id);
-            toggleClassName(element, 'animated');
-        } else {
-            hideTextContent(this.id);
-            showGridElements(this.id);
-            removeClassName(element, 'animated');
-        }*/
     })
 });
 
