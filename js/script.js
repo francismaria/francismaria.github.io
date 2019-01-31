@@ -34,7 +34,7 @@ function hideElements(elements){
     let widthCounter = 0;
     let maxWidth = elements[0].parentElement.offsetWidth;
 
-    timer = setInterval(function(){
+    let timer = setInterval(function(){
         if(widthCounter >= maxWidth){
             animationRunning = false;
             clearInterval(timer);
@@ -62,8 +62,8 @@ function hideElements(elements){
 function showElements(elements){
     let widthCounter = 0;
     let maxWidth = elements[0].parentElement.offsetWidth;
-
-    timer = setInterval(function(){
+ 
+    let timer = setInterval(function(){
         if(widthCounter >= maxWidth){
             animationRunning = false;
             clearInterval(timer);
@@ -248,11 +248,81 @@ function removeClassName(element, classname){
     element.classList.remove(classname);
 }
 
+function showAnimation(element){
+    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
+    let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
+    let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
+    let horizontalDirection = getHorizontalMovingDirection(element),
+        verticalDirection = getVerticalMovingDirection(element);
+
+    animationRunning = true;
+
+    // on each time step moves the element
+    let timer = setInterval(function(){
+        if(widthCounter >= maxWidth){
+            if(heightCounter < maxHeight){
+                heightCounter += 5;
+                moveElement(element, verticalDirection, heightCounter);
+            } else {
+                animationRunning = false;
+                clearInterval(timer);
+            }
+        } else {
+            widthCounter += 10;
+            moveElement(element, horizontalDirection, widthCounter);
+        }
+    }, 10);
+
+    hideGridElements(element.id);
+    showTextContent(element.id);
+    toggleClassName(element, 'animated');
+}
+
+function hideAnimation(element){
+    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
+    let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
+    let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
+    let horizontalDirection = getHorizontalMovingDirection(element),
+        verticalDirection = getVerticalMovingDirection(element);
+
+    animationRunning = true;
+
+    // on each time step moves the element
+    let timer = setInterval(function(){
+        //element.style.right = (maxWidth - widthCounter) + 'px';
+
+        if(widthCounter >= maxWidth){
+            if(heightCounter < maxHeight){
+                heightCounter += 5;
+                let heightStep = maxHeight - heightCounter;
+                moveElement(element, verticalDirection, heightStep);
+            } else {
+                animationRunning = false;
+                clearInterval(timer);
+            }
+        } else {
+            widthCounter += 10;
+            let widthStep = maxWidth - widthCounter;
+            moveElement(element, horizontalDirection, widthStep);
+        }
+    }, 10);
+
+    /*hideTextContent(this.id);
+    showGridElements(this.id);
+    removeClassName(element, 'animated');*/
+}
+
 document.querySelectorAll('.grid-elem').forEach(element => {
     element.addEventListener('click', function(e) {
         e.preventDefault();
         if(animationRunning) return;
-        
+
+        if(element.className.indexOf('animated') == -1){
+            showAnimation(element);
+        } else {
+            hideAnimation(element);
+        }
+        /*
         let widthCounter = 0, heightCounter = 0, marginStyle = 50;
         let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
         let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
@@ -284,7 +354,7 @@ document.querySelectorAll('.grid-elem').forEach(element => {
             hideTextContent(this.id);
             showGridElements(this.id);
             removeClassName(element, 'animated');
-        }
+        }*/
     })
 });
 
