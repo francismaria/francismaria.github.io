@@ -95,16 +95,16 @@ function showGridElements(activeElement){
 function moveElement(element, direction, step){
     switch(direction){
         case 'top':
-            element.style.top = step + 'px';
+            element.style.top = step + '%';
             break;
         case 'bottom':
-            element.style.bottom = step + 'px';
+            element.style.bottom = step + '%';
             break;
         case 'left':
-            element.style.left = step + 'px';
+            element.style.left = step + '%';
             break;
         case 'right':
-            element.style.right = step + 'px';
+            element.style.right = step + '%';
             break;
         default:
             console.log("Not a valid direction to move the element");
@@ -245,16 +245,15 @@ function removeClassName(element, classname){
  * @param {*} element element clicked to animate
  */
 function showAnimation(element){
-    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
-    let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
-    let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
+    let widthCounter = 0, heightCounter = 0;
+    let parentWidth = element.parentElement.offsetWidth;
+    let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + parentWidth*0.06);               //0.3 is the margin correspondent to the sidebar distance to the window border
+    let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + parentWidth*0.06);
     let horizontalDirection = getHorizontalMovingDirection(element),
         verticalDirection = getVerticalMovingDirection(element);
 
-    animationRunning = true;
-
     // on each time step moves the element
-    let timer = setInterval(function(){
+    /*let timer = setInterval(function(){
         if(widthCounter >= maxWidth){
             if(heightCounter < maxHeight){
                 heightCounter += 5;
@@ -267,7 +266,22 @@ function showAnimation(element){
             widthCounter += 10;
             moveElement(element, horizontalDirection, widthCounter);
         }
-    }, 10);
+    }, 10);*/
+
+    let timer = setInterval(function(){
+        if(widthCounter >= 59.5){           //percentage of the moving
+            if(heightCounter < 40){
+                heightCounter += 1;
+                moveElement(element, verticalDirection, heightCounter);
+            } else {
+                animationRunning = false;
+                clearInterval(timer);
+            }
+        } else {
+            widthCounter += 0.5;
+            moveElement(element, horizontalDirection, widthCounter);
+        }
+    }, 8);
 
     hideGridElements(element.id);
     showTextContent(element.id);
@@ -283,16 +297,15 @@ function showAnimation(element){
  * @param {*} element element clicked to animate
  */
 function hideAnimation(element){
-    let widthCounter = 0, heightCounter = 0, marginStyle = 50;
-    let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
-    let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
+    //let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
+    //let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
     let horizontalDirection = getHorizontalMovingDirection(element),
         verticalDirection = getVerticalMovingDirection(element);
 
-    animationRunning = true;
-
+    
+    let widthCounter = 59.5, heightCounter = 40;
     // on each time step moves the element
-    let timer = setInterval(function(){
+    /*let timer = setInterval(function(){
         if(widthCounter >= maxWidth){
             if(heightCounter <= maxHeight){
                 heightCounter += 1;
@@ -307,7 +320,21 @@ function hideAnimation(element){
             let widthStep = maxWidth - widthCounter;
             moveElement(element, horizontalDirection, widthStep);
         }
-    }, 10);
+    }, 10);*/
+    let timer = setInterval(function(){
+        if(widthCounter == 0){
+            if(heightCounter > 0){
+                heightCounter -= 1;
+                moveElement(element, verticalDirection, heightCounter);
+            } else {
+                animationRunning = false;
+                clearInterval(timer);
+            }
+        } else {
+            widthCounter -= 0.5;
+            moveElement(element, horizontalDirection, widthCounter);
+        }
+    }, 8);
 
     hideTextContent(element.id);
     showGridElements(element.id);
@@ -321,6 +348,8 @@ document.querySelectorAll('.grid-elem').forEach(element => {
     element.addEventListener('click', function(e) {
         e.preventDefault();
         if(animationRunning) return;
+
+        animationRunning = true;
 
         if(element.className.indexOf('animated') == -1){
             showAnimation(element);
