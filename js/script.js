@@ -314,6 +314,9 @@ function hideAnimation(element){
     removeClassName(element, 'animated');
 }
 
+/**
+ * 
+ */
 document.querySelectorAll('.grid-elem').forEach(element => {
     element.addEventListener('click', function(e) {
         e.preventDefault();
@@ -325,6 +328,10 @@ document.querySelectorAll('.grid-elem').forEach(element => {
             hideAnimation(element);
         }
     })
+});
+
+window.addEventListener("resize", function(){
+    console.log("resizing...")
 });
 
 /* MODALS */
