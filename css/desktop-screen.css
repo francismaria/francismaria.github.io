@@ -425,16 +425,15 @@ html, body{
             height: auto;
 
         }
-
-/* SOCIAL BOARD 
-.social-cards-container{
-    display: flex;
-    height: 30em;
-    justify-content: space-between;
+*/
+.footer-links{
+    display: inline-block;
+    margin: 0.5em auto;
 }
 
-.social-card{
-    flex: 1;
-    margin: 3em 3em;
-    background-color: orange;
-}*/
+.footer-links a{
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+    margin: auto 0.4em;
+}
