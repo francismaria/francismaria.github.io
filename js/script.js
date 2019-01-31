@@ -248,6 +248,13 @@ function removeClassName(element, classname){
     element.classList.remove(classname);
 }
 
+/**
+ * This function carries the show-content animation.
+ * Executes when a square is pressed upon its original position.
+ * It receives the element to be animated and continuously updates
+ * its position until it reaches the ending point".
+ * @param {*} element element clicked to animate
+ */
 function showAnimation(element){
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
@@ -278,6 +285,14 @@ function showAnimation(element){
     toggleClassName(element, 'animated');
 }
 
+/**
+ * This function carries the hide-content animation.
+ * Executes when a square is pressed upon its position when content
+ * is being displayed.
+ * It receives the element to be animated and continuously updates
+ * its position until it reaches the ending point".
+ * @param {*} element element clicked to animate
+ */
 function hideAnimation(element){
     let widthCounter = 0, heightCounter = 0, marginStyle = 50;
     let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
