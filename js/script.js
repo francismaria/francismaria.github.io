@@ -307,8 +307,8 @@ function hideAnimation(element){
         }
     }, 10);
 
-    /*hideTextContent(this.id);
-    showGridElements(this.id);
+    hideTextContent(element.id);
+    /*showGridElements(this.id);
     removeClassName(element, 'animated');*/
 }
 
