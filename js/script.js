@@ -315,7 +315,7 @@ function hideAnimation(element){
 }
 
 /**
- * 
+ * Listener for each grid element. Executes its animation.
  */
 document.querySelectorAll('.grid-elem').forEach(element => {
     element.addEventListener('click', function(e) {
@@ -330,6 +330,9 @@ document.querySelectorAll('.grid-elem').forEach(element => {
     })
 });
 
+/**
+ * Listener for the window resizer.
+ */
 window.addEventListener("resize", function(){
     console.log("resizing...")
 });
