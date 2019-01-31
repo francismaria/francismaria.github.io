@@ -52,8 +52,34 @@ function hideElements(elements){
     }, 5);
 }
 
+/**
+ * Shows all the elements that need to be shown.
+ * This way, this function receives an array with all the elements
+ * to show and within the setInterval function updates the position
+ * of each of the elements to its original position. 
+ * @param {*} elements all the elements to be show
+ */
 function showElements(elements){
-    
+    let widthCounter = 0;
+    let maxWidth = elements[0].parentElement.offsetWidth;
+
+    timer = setInterval(function(){
+        if(widthCounter >= maxWidth){
+            animationRunning = false;
+            clearInterval(timer);
+        } else {
+            widthCounter += 10;
+            elements.forEach(function(element){
+                //checks if the class name contains the element position
+                if(element.className.indexOf('grid-elem-left') !== -1){       
+                    element.style.left = widthCounter + 'px';
+                } else {
+                    element.style.right = widthCounter + 'px';
+                }
+            });
+        }
+    }, 5);
+
 }
 
 /**
@@ -120,7 +146,6 @@ function showGridElements(activeElement){
             console.log("Not a valid element to hide.");
             break;
     }
-    console.log("SHOW ELEMENTS ANIMATION");
 }
 
 /**
