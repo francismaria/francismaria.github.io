@@ -177,7 +177,7 @@ function moveElement(element, direction, step){
 /**
  * Auxiliary function which returns the horizontal direction
  * on which the element shall be animated (left or right).
- * @param {*} element element to check its horizontal position
+ * @param {*} element element to retrieve its horizontal position
  * in the grid.
  */
 function getHorizontalMovingDirection(element){
@@ -189,7 +189,7 @@ function getHorizontalMovingDirection(element){
 /**
  * Auxiliary function which returns the vertical direction
  * on which the element shall be animated (top or bottom).
- * @param {*} element element to check its vertical position
+ * @param {*} element element to retrieve its vertical position
  * in the grid.
  */
 function getVerticalMovingDirection(element){
@@ -201,7 +201,7 @@ function getVerticalMovingDirection(element){
 /**
  * Parses the name of the container to construct the
  * text content div id, in order to get the element to show.
- * @param {string} name 
+ * @param {string} name name of the element to parse
  */
 function parseContainerName(name){
     return name.split('-')[0] + '-content';
