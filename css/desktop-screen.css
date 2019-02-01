@@ -43,26 +43,6 @@ html, body{
     font-size: 1.5em;
 }
 
-#main-board nav{
-    margin-bottom: 3em;
-}
-
-#main-board nav ul{
-    padding: 0;
-}
-
-#main-board nav ul li{
-    list-style: none;
-    margin: 1.2em 2em;
-    display: inline-block;
-}
-
-#main-board a{
-    text-decoration: none;
-    font-size: 1.2em;
-    color: white;
-}
-
 .down-arrow-wrap{
     display: none;
 }
