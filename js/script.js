@@ -113,57 +113,6 @@ function moveElement(element, direction, step){
 }
 
 /**
- * Hides all the elements that need to be hidden.
- * As JavaScript is a single-threaded language the _setInterval 
- * has a sequential behaviour causing delays and an asynchronous
- * effect between animations.
- * This way, this function receives an array with all the elements
- * to hide and within the setInterval function updates the position
- * of each of the elements. 
- * @param {*} elements all the elements to be hidden
- */
-function hideElements(elements){
-    let widthCounter = 0;
-    let maxWidth = elements[0].parentElement.offsetWidth;
-
-    let timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            animationRunning = false;
-            clearInterval(timer);
-        } else {
-            widthCounter += 10;
-            elements.forEach(function(element){
-                moveElement(element, getHorizontalMovingDirection(element), widthCounter);
-            });
-        }
-    }, 5);
-}
-
-/**
- * Shows all the elements that need to be shown.
- * This way, this function receives an array with all the elements
- * to show and within the setInterval function updates the position
- * of each of the elements to its original position. 
- * @param {*} elements all the elements to be show
- */
-function showElements(elements){
-    let widthCounter = 0;
-    let maxWidth = elements[0].parentElement.offsetWidth;
- 
-    let timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            animationRunning = false;
-            clearInterval(timer);
-        } else {
-            widthCounter += 3;
-            elements.forEach(function(element){
-                moveElement(element, getHorizontalMovingDirection(element), (maxWidth-widthCounter));
-            });
-        }
-    }, 5);
-}
-
-/**
  * Auxiliary function which returns the horizontal direction
  * on which the element shall be animated (left or right).
  * @param {*} element element to retrieve its horizontal position
@@ -238,6 +187,55 @@ function removeClassName(element, classname){
 }
 
 /**
+ * Hides all the elements that need to be hidden.
+ * As JavaScript is a single-threaded language the _setInterval 
+ * has a sequential behaviour causing delays and an asynchronous
+ * effect between animations.
+ * This way, this function receives an array with all the elements
+ * to hide and within the setInterval function updates the position
+ * of each of the elements. 
+ * @param {*} elements all the elements to be hidden
+ */
+function hideElements(elements){
+    let widthCounter = 0;
+
+    let timer = setInterval(function(){
+        if(widthCounter >= 100){
+            animationRunning = false;
+            clearInterval(timer);
+        } else {
+            widthCounter += 1;
+            elements.forEach(function(element){
+                moveElement(element, getHorizontalMovingDirection(element), widthCounter);
+            });
+        }
+    }, 5);
+}
+
+/**
+ * Shows all the elements that need to be shown.
+ * This way, this function receives an array with all the elements
+ * to show and within the setInterval function updates the position
+ * of each of the elements to its original position. 
+ * @param {*} elements all the elements to be show
+ */
+function showElements(elements){
+    let widthCounter = 100;
+ 
+    let timer = setInterval(function(){
+        if(widthCounter == 0){
+            animationRunning = false;
+            clearInterval(timer);
+        } else {
+            widthCounter -= 1;
+            elements.forEach(function(element){
+                moveElement(element, getHorizontalMovingDirection(element), widthCounter);
+            });
+        }
+    }, 5);
+}
+
+/**
  * This function carries the show-content animation.
  * Executes when a square is pressed upon its original position.
  * It receives the element to be animated and continuously updates
@@ -246,27 +244,10 @@ function removeClassName(element, classname){
  */
 function showAnimation(element){
     let widthCounter = 0, heightCounter = 0;
-    let parentWidth = element.parentElement.offsetWidth;
-    let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + parentWidth*0.06);               //0.3 is the margin correspondent to the sidebar distance to the window border
-    let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + parentWidth*0.06);
     let horizontalDirection = getHorizontalMovingDirection(element),
         verticalDirection = getVerticalMovingDirection(element);
 
-    // on each time step moves the element
-    /*let timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            if(heightCounter < maxHeight){
-                heightCounter += 5;
-                moveElement(element, verticalDirection, heightCounter);
-            } else {
-                animationRunning = false;
-                clearInterval(timer);
-            }
-        } else {
-            widthCounter += 10;
-            moveElement(element, horizontalDirection, widthCounter);
-        }
-    }, 10);*/
+    animationRunning = true;
 
     let timer = setInterval(function(){
         if(widthCounter >= 59.5){           //percentage of the moving
@@ -297,30 +278,12 @@ function showAnimation(element){
  * @param {*} element element clicked to animate
  */
 function hideAnimation(element){
-    //let maxWidth = element.parentElement.offsetWidth - (element.offsetWidth + marginStyle);
-    //let maxHeight = element.parentElement.offsetHeight - (element.offsetHeight + marginStyle);
     let horizontalDirection = getHorizontalMovingDirection(element),
-        verticalDirection = getVerticalMovingDirection(element);
-
-    
+        verticalDirection = getVerticalMovingDirection(element);    
     let widthCounter = 59.5, heightCounter = 40;
-    // on each time step moves the element
-    /*let timer = setInterval(function(){
-        if(widthCounter >= maxWidth){
-            if(heightCounter <= maxHeight){
-                heightCounter += 1;
-                let heightStep = maxHeight - heightCounter;
-                moveElement(element, verticalDirection, heightStep);
-            } else {
-                animationRunning = false;
-                clearInterval(timer);
-            }
-        } else {
-            widthCounter += 3;
-            let widthStep = maxWidth - widthCounter;
-            moveElement(element, horizontalDirection, widthStep);
-        }
-    }, 10);*/
+    
+    animationRunning = true;
+
     let timer = setInterval(function(){
         if(widthCounter == 0){
             if(heightCounter > 0){
@@ -348,8 +311,6 @@ document.querySelectorAll('.grid-elem').forEach(element => {
     element.addEventListener('click', function(e) {
         e.preventDefault();
         if(animationRunning) return;
-
-        animationRunning = true;
 
         if(element.className.indexOf('animated') == -1){
             showAnimation(element);
