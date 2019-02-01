@@ -1,9 +1,7 @@
-
-if(document.documentElement.clientWidth < 901){     //smartphone screen script
-    console.log("SMARTPHONE SCRIPT")
-} else {                                    //desktop screen script
-    let animationRunning = false;
-
+/*-------------------------------------------------------------------
+                    SMARTPHONE SCREEN SCRIPT
+--------------------------------------------------------------------*/
+if(document.documentElement.clientWidth < 901){     
     /**
      * Smoothly scrolls down a page until a certain height
      * given an initial height.
@@ -23,6 +21,19 @@ if(document.documentElement.clientWidth < 901){     //smartphone screen script
             }
         }, 2);
     }
+
+    document.querySelector('.down-arrow-wrap').addEventListener('click', function(e){
+        e.preventDefault();
+
+        //smoothDownScroll()
+    });
+}
+
+/*-------------------------------------------------------------------
+                        DESKTOP SCREEN SCRIPT
+--------------------------------------------------------------------*/ 
+else {                                    //desktop screen script
+    let animationRunning = false;
 
     /**
      * This function hides all the elements that are to be hidden upon a 
