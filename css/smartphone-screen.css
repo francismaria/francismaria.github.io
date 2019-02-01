@@ -22,9 +22,18 @@ html, body{
     position: absolute;
     bottom: 0;
     width: 100%;
-    margin: 5em auto;
+    margin: auto auto 6em auto;
 }
 
 .down-arrow-wrap{
+    position: absolute;
+    left: 45%;
     bottom: 0;
+    height: 12%;
+    width: 12%;
+}
+.down-arrow-wrap img{
+    max-width: 100%;
+    max-height: 100%;
+    filter: brightness(0) invert(0.8);
 }
