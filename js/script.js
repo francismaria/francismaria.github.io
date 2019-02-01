@@ -251,7 +251,7 @@ function showAnimation(element){
 
     let timer = setInterval(function(){
         if(widthCounter >= 59.5){           //percentage of the moving
-            if(heightCounter < 40){
+            if(heightCounter < 39){
                 heightCounter += 1;
                 moveElement(element, verticalDirection, heightCounter);
             } else {
