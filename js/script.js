@@ -22,10 +22,13 @@ if(document.documentElement.clientWidth < 901){
         }, 2);
     }
 
+    /**
+     * Click listener for the down-arrow image.
+     * Upon its click it smoothly transitions to the interaction board element.
+     */
     document.querySelector('.down-arrow-wrap').addEventListener('click', function(e){
         e.preventDefault();
-
-        //smoothDownScroll()
+        smoothDownScroll(document.querySelector('#interaction-board').clientHeight, this.clientHeight);
     });
 }
 
