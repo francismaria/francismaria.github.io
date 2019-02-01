@@ -209,7 +209,7 @@ function hideElements(elements){
                 moveElement(element, getHorizontalMovingDirection(element), widthCounter);
             });
         }
-    }, 5);
+    }, 4);
 }
 
 /**
@@ -232,7 +232,7 @@ function showElements(elements){
                 moveElement(element, getHorizontalMovingDirection(element), widthCounter);
             });
         }
-    }, 5);
+    }, 4);
 }
 
 /**
@@ -262,7 +262,7 @@ function showAnimation(element){
             widthCounter += 0.5;
             moveElement(element, horizontalDirection, widthCounter);
         }
-    }, 6);
+    }, 4);
 
     hideGridElements(element.id);
     showTextContent(element.id);
@@ -297,7 +297,7 @@ function hideAnimation(element){
             widthCounter -= 0.5;
             moveElement(element, horizontalDirection, widthCounter);
         }
-    }, 6);
+    }, 4);
 
     hideTextContent(element.id);
     showGridElements(element.id);
