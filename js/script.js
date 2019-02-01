@@ -262,7 +262,7 @@ function showAnimation(element){
             widthCounter += 0.5;
             moveElement(element, horizontalDirection, widthCounter);
         }
-    }, 8);
+    }, 6);
 
     hideGridElements(element.id);
     showTextContent(element.id);
@@ -297,7 +297,7 @@ function hideAnimation(element){
             widthCounter -= 0.5;
             moveElement(element, horizontalDirection, widthCounter);
         }
-    }, 8);
+    }, 6);
 
     hideTextContent(element.id);
     showGridElements(element.id);
