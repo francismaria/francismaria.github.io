@@ -66,15 +66,30 @@ html, body{
     -o-transition: visibility 1s, opacity 1s ease-out;
 }
 
+/*------------------------------------
+                  GRID
+-------------------------------------*/  
+
 .grid-container{
-    position: absolute;
-    overflow: hidden;
     display: grid;
-    grid-column-gap: 1%;
     z-index: 10;
 }
 
+.grid-elem-container{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.grid-elem{
+}
+
+
+/*------------------------------------
+                FOOTER
+-------------------------------------*/         
 .footer-links{
     display: inline-block;
     margin: 0.5em auto;
