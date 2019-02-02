@@ -67,3 +67,32 @@ html, body{
     -webkit-transition: visibility 1s, opacity 1s ease-out;
     -o-transition: visibility 1s, opacity 1s ease-out;
 }
+
+.grid-container{
+    position: absolute;
+    overflow: hidden;
+    display: grid;
+    grid-column-gap: 1%;
+    z-index: 10;
+}
+
+.footer-links{
+    display: inline-block;
+    margin: 0.5em auto;
+}
+
+.footer-links a{
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+    margin: auto 0.4em;
+    padding: 1em auto;
+    transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+}
+
+.footer-links a:hover{
+    opacity: 0.6;
+}
