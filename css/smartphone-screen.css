@@ -14,8 +14,6 @@ html, body{
     position: relative;
     text-align: center;
     height: 100vh;
-    /*background: url('../images/background-pic.jpg') no-repeat top center;
-    background-size: cover;*/
 }
 
 .info-wrap{
