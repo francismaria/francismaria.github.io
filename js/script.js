@@ -28,7 +28,7 @@ if(document.documentElement.clientWidth < 901){
      */
     document.querySelector('.down-arrow-wrap').addEventListener('click', function(e){
         e.preventDefault();
-        smoothDownScroll(document.querySelector('#interaction-board').clientHeight, this.clientHeight);
+        smoothDownScroll(document.querySelector('#interaction-board').clientHeight, window.pageYOffset);
     });
 }
 
