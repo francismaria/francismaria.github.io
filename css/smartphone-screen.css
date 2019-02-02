@@ -27,7 +27,7 @@ html, body{
 
 .down-arrow-wrap{
     position: absolute;
-    left: 45%;
+    left: 44%;
     bottom: 0;
     height: 12%;
     width: 12%;
@@ -75,6 +75,7 @@ html, body{
     grid-column-gap: 1%;
     z-index: 10;
 }
+
 
 .footer-links{
     display: inline-block;
