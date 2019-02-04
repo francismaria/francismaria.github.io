@@ -30,6 +30,7 @@ html, body{
     bottom: 0;
     height: 12%;
     width: 12%;
+    margin: 2em auto;
 }
 
 .down-arrow-wrap:hover{

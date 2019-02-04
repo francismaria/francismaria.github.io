@@ -80,6 +80,16 @@ html, body{
     -o-transition: visibility 1s, opacity 1s ease-out;
 }
 
+.text-content{
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.text-content p{
+    padding: 0.5em 3em 0 3em;
+    font-size: 1.7em;
+}
+
     /* Container of the left-side square */
 .text-header-left{
     margin: 3% 5% auto 22%;
