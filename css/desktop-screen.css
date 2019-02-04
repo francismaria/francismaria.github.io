@@ -80,6 +80,16 @@ html, body{
     -o-transition: visibility 1s, opacity 1s ease-out;
 }
 
+.sidebar{
+    text-align: justify;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.sidebar p{
+    padding: 1em 1.5em;
+}
+
 .text-content{
     overflow-y: scroll;
     text-align: left;
