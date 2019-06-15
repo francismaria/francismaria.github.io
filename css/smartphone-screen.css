@@ -47,6 +47,20 @@ html, body{
 }
 
 /* -----------------------------------
+ *           MAIN CONTAINERS
+ * ----------------------------------- */  
+
+.container{
+    margin: 2em 2em;
+}
+
+.container h2{
+    margin-top: 0;
+    padding-bottom: 1em;
+    border-bottom: 2px solid white;
+}
+
+/* -----------------------------------
  *               FOOTER
  * ----------------------------------- */   
 
