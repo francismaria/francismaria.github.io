@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: #353535;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+input,  
+textarea,
+button,
+select,
+div, 
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+* {
+  scrollbar-color: light;
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	-ms-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+
+*:focus {
+  outline: solid #bcbcbc 1px;
+}
+
+.full-cover {
+  min-height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.full-cover-modal{
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.section-content {
+  padding: 2em;
+}
+
+.spaced-cover {
+  margin: 5em 0;
+}
+
+.full-cover, .spaced-cover {
+  transition: opacity 0.7s ease-in-out;
+}
+
+.section-header {
+  text-align: center;
+  margin: 2em 0;
+  font-size: 50px;
+  color: #bcbcbc;
+}
+
+.visible-section {
+  opacity: 1;
+}
+
+.hidden-section {
+  opacity: 0; 
+}
+
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.list-opacity-animation li, .opacity-animation {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.list-opacity-animation li:hover, .opacity-animation:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h1, h3 {
+  margin: 20px 0;
+}
+
+li:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*
+body .sectionBackground {
+  width: 100vw;
+}
+
+body .flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+body .sectionContents {
+  padding-top: 10vh;
+  height: 90vh;
+  margin: 0 10em;
+}
+
+body .sectionTitle {
+  text-align: center;
+}
+
+body .fullCover {
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+*/
+
+/* removes blue background effect on click */ 
+button, select, a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none !important;
+}

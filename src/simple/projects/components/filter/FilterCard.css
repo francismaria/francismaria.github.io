@@ -1,0 +1,29 @@
+.filterCard {
+  margin: auto 0.5em;
+  padding: 7px 15px;
+  border: 1px solid #0d1b2a;
+  border-radius: 20px;
+}
+
+.filterCard p {
+  text-align: center;
+  margin: 0;
+}
+
+.addAction {
+  text-align: center;
+  width: 70px;
+}
+
+.removeAction {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 10px;
+  min-width: 50px;
+}
+
+.closeIcon:hover, .addAction:hover {
+  cursor: pointer;
+  color: grey;
+}
+

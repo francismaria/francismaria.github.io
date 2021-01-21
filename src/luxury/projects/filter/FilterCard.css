@@ -1,0 +1,36 @@
+.filterCard {
+  min-width: 100px;
+  margin: auto 0.5em;
+  padding: 7px 15px;
+  border: 1px solid #bcbcbc;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.filterCard p {
+  text-align: center;
+  margin: 0;
+}
+
+.addAction {
+  text-align: center;
+}
+
+.removeAction {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 10px;
+  min-width: 50px;
+}
+
+.closeIcon:hover, .addAction:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+@media only screen and (max-width: 600px) { 
+  #filter-section .filterCard .filterId {
+    margin-top: 0;
+  }
+}
+

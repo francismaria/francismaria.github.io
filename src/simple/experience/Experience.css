@@ -1,0 +1,16 @@
+#experience {
+  height: auto;
+}
+
+#experience .sectionContents {
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#experience .roundedContainer {
+  padding: 0.5em;
+  background-color: #e0e1dd;
+  box-shadow: 3px 5px 30px #0d1b2a;
+}

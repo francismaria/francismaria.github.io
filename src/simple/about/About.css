@@ -1,0 +1,45 @@
+#about .sectionContents {
+  height: auto;
+}
+article .grid-col-3 {
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+}
+
+article .bigIcon {
+  display:flex;
+  justify-content: center;
+}
+
+article .bigIcon i {
+  background-color: whitesmoke;
+  font-size: 60px;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  border: 10px solid #C5D5EA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article .aboutCard {
+  line-height: 25px;
+  margin-top: -30px;
+  padding: 2em 4em;
+  border-radius: 20px;
+  background-color: #C5D5EA;
+}
+
+article .aboutCard .styleLine {
+  display: block;
+  height: 5px;
+  margin: 20px 0;
+  border-radius: 5px;
+  background-color: #2D3047;
+}
+

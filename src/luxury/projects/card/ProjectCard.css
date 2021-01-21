@@ -1,0 +1,87 @@
+.projectCard {
+  margin: 1em 0;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 4fr 1fr;
+  border-bottom: 1px solid #bcbcbc;
+}
+
+@media only screen and (min-width: 600px) {
+  .projectCard {
+    width: 25em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .projectCard {
+    width: 15em;
+    min-width: 200px;
+    row-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .projectCard h3 {
+    margin: 5px 0;
+  }
+  
+  .projectCard h6 {
+    color: #bcbcbc;
+    margin: 5px 0;
+  }
+}
+
+.projectCard h6 {
+  color: #bcbcbc;
+  margin: 10px 0;
+}
+
+.projectAction {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.projectCard .projectDetails {
+  overflow: hidden;
+  transition: max-height 0.4s ease-in;
+}
+
+.expanded {
+  max-height: 400px;
+}
+
+.collapsed {
+  max-height: 0;
+}
+
+.projectCard .projectDetails h4 {
+  font-size: small;
+}
+
+.projectCard .projectDetails p {
+  font-size: 14px;
+  line-height: 1.6em;
+}
+
+.projectCard .projectDetails i {
+  font-size: 30px;
+  margin: 0 10px;
+}
+
+.tech-icons-container {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projectCard .projectDetails a { 
+  color: #bcbcbc;
+  font-size: 12px;
+  transition: color 0.3s ease-in-out;
+}
+
+.projectCard .projectDetails a:hover { 
+  color: white;
+}
+

@@ -1,0 +1,30 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 5em 0 1.5em 0;
+  padding: 0 5em;
+}
+
+footer ul.social-media-icons, footer p {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+  footer ul.social-media-icons li:first-child {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    gap: 30px;
+    text-align: center;
+    flex-direction: column;
+  } 
+
+  footer p.copyright-notice {
+    margin: 10px 0;
+    font-size: small;
+  }
+}

@@ -1,0 +1,55 @@
+.timeline-card {
+  color: white;
+}
+
+.timeline-element-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 15px auto;
+  margin: 10px 0;
+}
+.timeline-date p {
+  margin: 0;
+  font-size: small;
+  color: whitesmoke;
+}
+
+.timeline-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.timeline-line {
+  width: 1px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.timeline-info {
+  margin: 5px 0;
+}
+
+.timeline-info h3 {
+  margin: 5px 0;
+}
+
+.timeline-info a {
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+.timeline-info a:hover {
+  color: #bcbcbc;
+  cursor: pointer;
+}

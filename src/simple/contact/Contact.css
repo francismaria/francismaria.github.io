@@ -1,0 +1,87 @@
+#contact {
+  /*color: #e0e1dd;*/
+  background-color: #2D3047;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#contactContainer {
+  display: flex;
+  margin: 10em;
+}
+
+#linksContainer {
+  margin-right: 100px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#linksContainer h4 {
+  border-bottom: 1px solid #e0e1dd;
+}
+
+.contactLink {
+  display: flex;
+  padding: 1em 0;
+}
+
+.contactLink i {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.contactLink p {
+  margin: 0;
+}
+
+#contactFormContainer {
+  flex: 1;
+}
+
+#contactFormContainer input, #contactFormContainer textarea {
+  margin-bottom: 10px;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+#contactFormContainer label {
+  margin: 10px 0;
+}
+
+#contactFormContainer input:active, #contactFormContainer input:focus{
+  outline: none !important;
+}
+
+#contactFormContainer :not(input[type='submit']) {
+  background-color: #e0e1dd;
+}
+
+.submitBtn {
+  font-size: 16px;
+  align-self: center;
+  width: 50%;
+  margin: 20px 0;
+  padding: 0.7em 2em;
+  color: #e0e1dd;
+  border: solid 1px #e0e1dd;
+  border-radius: 40px;
+  background-color: transparent;
+  transition: all 0.2s ;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.submitBtn:hover {
+  cursor: pointer;
+  color: #1D3A5D;
+  background-color: white;
+}
+
+footer {
+  text-align: center;
+}
