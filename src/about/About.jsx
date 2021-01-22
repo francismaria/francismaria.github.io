@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect, useRef } from 'react';
 import CircleImage from '../common/circleImage/CircleImage';
-import profilePic from '../../images/github_profile.png'
+import profilePic from '../images/github_profile.png'
 import './About.css'
 
 function About() {

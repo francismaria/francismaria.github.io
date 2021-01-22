@@ -1,6 +1,6 @@
 import ProjectCard from '../card/ProjectCard'
-import inesctecLogo from '../../../images/companies/inesc-tec_logo.png'
-import feupLogo from '../../../images/companies/feup_logo.png'
+import inesctecLogo from '../../images/companies/inesc-tec_logo.png'
+import feupLogo from '../../images/companies/feup_logo.png'
 
 const ANDROID_ICON = 'fab fa-android';
 const IOS_ICON = 'fab fa-apple';

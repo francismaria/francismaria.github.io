@@ -1,22 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-/*
-import Home from './home/Home';
-import About from './about/About'
-import Experience from './experience/Experience'
-import Contact from './contact/Contact'
-import Menu from './simple/menu/Menu'
-import Projects from './simple/projects/Projects'
-*/
-import Navbar from './luxury/navbar/Navbar';
-import Presentation from './luxury/presentation/Presentation';
-import About from './luxury/about/About';
-import Quote from './luxury/quote/Quote';
-import Experience from './luxury/experience/Experience';
-import Projects from './luxury/projects/Projects';
-import Contact from './luxury/contact/Contact';
-import Footer from './luxury/footer/Footer';
+import Navbar from './navbar/Navbar';
+import Presentation from './presentation/Presentation';
+import About from './about/About';
+import Quote from './quote/Quote';
+import Experience from './experience/Experience';
+import Projects from './projects/Projects';
+import Contact from './contact/Contact';
+import Footer from './footer/Footer';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
