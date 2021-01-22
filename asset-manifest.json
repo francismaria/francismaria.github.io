@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.d92b3c32.chunk.css",
-    "main.js": "/static/js/main.f43e52e8.chunk.js",
-    "main.js.map": "/static/js/main.f43e52e8.chunk.js.map",
+    "main.css": "/static/css/main.87f0c320.chunk.css",
+    "main.js": "/static/js/main.a869796e.chunk.js",
+    "main.js.map": "/static/js/main.a869796e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.273ae02a.js",
     "runtime-main.js.map": "/static/js/runtime-main.273ae02a.js.map",
     "static/js/2.c39cd0e7.chunk.js": "/static/js/2.c39cd0e7.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.6dbae655.chunk.js": "/static/js/3.6dbae655.chunk.js",
     "static/js/3.6dbae655.chunk.js.map": "/static/js/3.6dbae655.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.d92b3c32.chunk.css.map": "/static/css/main.d92b3c32.chunk.css.map",
+    "static/css/main.87f0c320.chunk.css.map": "/static/css/main.87f0c320.chunk.css.map",
     "static/js/2.c39cd0e7.chunk.js.LICENSE.txt": "/static/js/2.c39cd0e7.chunk.js.LICENSE.txt",
     "static/media/feup_logo.00173d23.png": "/static/media/feup_logo.00173d23.png",
     "static/media/github_profile.8665e2ac.png": "/static/media/github_profile.8665e2ac.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.273ae02a.js",
     "static/js/2.c39cd0e7.chunk.js",
-    "static/css/main.d92b3c32.chunk.css",
-    "static/js/main.f43e52e8.chunk.js"
+    "static/css/main.87f0c320.chunk.css",
+    "static/js/main.a869796e.chunk.js"
   ]
 }
