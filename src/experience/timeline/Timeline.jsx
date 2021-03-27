@@ -10,6 +10,7 @@ const companiesMap = new Map([
 function Timeline() {
   return (
     <div id='timeline'>
+      <Element date='February 2021 - Present' title='Software Development Engineer' company={companiesMap.get('Amazon')} />
       <Element date='September 2016 - December 2020' title='MSc Degree' company={companiesMap.get('FEUP')} />
       <Element date='February 2020 - November 2020' title='Software Development Intern' company={companiesMap.get('Amazon')} />
       <Element date='June 2019 - December 2019' title='Research Assistant' company={companiesMap.get('INESC-TEC')} />
