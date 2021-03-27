@@ -109,34 +109,6 @@ code {
     monospace;
 }
 
-/*
-body .sectionBackground {
-  width: 100vw;
-}
-
-body .flexColumn {
-  display: flex;
-  flex-direction: column;
-}
-
-body .sectionContents {
-  padding-top: 10vh;
-  height: 90vh;
-  margin: 0 10em;
-}
-
-body .sectionTitle {
-  text-align: center;
-}
-
-body .fullCover {
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-}
-*/
-
 /* removes blue background effect on click */ 
 button, select, a {
   -webkit-tap-highlight-color: transparent;

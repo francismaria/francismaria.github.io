@@ -21,14 +21,6 @@ ReactDOM.render(
     <Projects />
     <Contact />
     <Footer />
-    { /*
-    <Menu />
-    <Home />
-    <About />
-    <Experience />
-    <Projects />
-    <Contact />
-    */ }
   </React.StrictMode>,
   document.getElementById('root')
 );
